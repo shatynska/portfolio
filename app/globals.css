@@ -15,7 +15,7 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--foreground-dark-rgb));
 }
 
 a {
