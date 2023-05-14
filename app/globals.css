@@ -27,6 +27,7 @@ body {
 .cell-lg,
 .cell-md,
 .cell-sm {
+  position: relative;
   width: 384px;
 }
 
