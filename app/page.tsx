@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       <div className="cell-lg">
         <Image
           src="/developer.jpg"
@@ -11,6 +11,7 @@ export default function Home() {
           priority
         />
       </div>
+      <div className="cell-lg bg-primary-200"></div>
     </main>
   );
 }

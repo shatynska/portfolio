@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --foreground-light-rgb: 255, 255, 255;
   --foreground-dark-rgb: 47, 47, 47;
-  --background-light-rgb: 245, 245, 245;
-  --background-dark-rgb: 34, 34, 34;
 }
 
 * {
@@ -22,13 +19,19 @@ a {
 
 body {
   color: rgb(var(--foreground-dark-rgb));
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 384px 384px 384px;
 }
 
 .cell-lg,
 .cell-md,
 .cell-sm {
   position: relative;
-  width: 384px;
 }
 
 .cell-lg {
