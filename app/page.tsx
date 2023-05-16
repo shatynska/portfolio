@@ -22,7 +22,21 @@ export default function Home() {
           Main technology stack used: PHP, Laravel, MySQL, TypeScript, Next.js.
         </p>
       </div>
-      <div className="cell-lg bg-primary-900"></div>
+      <div className="cell-lg bg-primary-900 text-primary-100">
+        <h2>Skills</h2>
+        <ul>
+          <li>PHP</li>
+          <li>Laravel</li>
+          <li>REST API</li>
+          <li>MySQL, Redis</li>
+          <li>Unit test</li>
+          <li>JavaScript, TypeScript</li>
+          <li>React, Next.js</li>
+          <li>HTML, CSS, SASS, Tailwind</li>
+          <li>Git, GitHub Actions, CI/CD</li>
+          <li>Docker, Linux, VPS</li>
+        </ul>
+      </div>
       <div className="cell-lg">
         <Image src="/decoration.jpg" alt="decoration element" fill={true} />
       </div>
