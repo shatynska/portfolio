@@ -18,9 +18,14 @@ a {
 }
 
 body {
-  color: rgb(var(--foreground-dark-rgb));
   max-width: 1152px;
   margin: 0 auto;
+  color: rgb(var(--foreground-dark-rgb));
+  line-height: 1.75rem;
+}
+
+p {
+  margin-top: 1rem;
 }
 
 main {
@@ -31,7 +36,12 @@ main {
 .cell-lg,
 .cell-md,
 .cell-sm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  padding: 2.5rem;
   border-color: rgba(245, 245, 245, 1);
 }
 

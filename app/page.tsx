@@ -13,7 +13,15 @@ export default function Home() {
       </div>
       <div className="cell-lg bg-primary-200"></div>
       <div className="cell-lg border-r-2"></div>
-      <div className="cell-lg border-l-2"></div>
+      <div className="cell-lg border-l-2">
+        <p>
+          Web developer focused on&nbsp;backend with&nbsp;frontend background
+          based in&nbsp;Ukraine.
+        </p>
+        <p>
+          Main technology stack used: PHP, Laravel, MySQL, TypeScript, Next.js.
+        </p>
+      </div>
       <div className="cell-lg bg-primary-900"></div>
       <div className="cell-lg">
         <Image src="/decoration.jpg" alt="decoration element" fill={true} />
