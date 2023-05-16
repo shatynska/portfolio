@@ -32,6 +32,7 @@ main {
 .cell-md,
 .cell-sm {
   position: relative;
+  border-color: rgba(245, 245, 245, 1);
 }
 
 .cell-lg {

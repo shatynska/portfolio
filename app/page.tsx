@@ -12,6 +12,12 @@ export default function Home() {
         />
       </div>
       <div className="cell-lg bg-primary-200"></div>
+      <div className="cell-lg border-r-2"></div>
+      <div className="cell-lg border-l-2"></div>
+      <div className="cell-lg bg-primary-900"></div>
+      <div className="cell-lg">
+        <Image src="/decoration.jpg" alt="decoration element" fill={true} />
+      </div>
     </main>
   );
 }
