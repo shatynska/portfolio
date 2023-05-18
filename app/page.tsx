@@ -11,7 +11,18 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="cell-lg bg-primary-200 bg-[url('/backgrounds/line.svg')]"></div>
+      <div className="cell-lg justify-around bg-primary-200 bg-[url('/backgrounds/line.svg')]">
+        <h1 className="text-[2.5rem] leading-[3.25rem] font-bold">
+          Web
+          <br />
+          Developer
+        </h1>
+        <div className="text-[2.5rem] leading-[3.25rem] font-bold text-right">
+          Helen
+          <br />
+          Shatynska
+        </div>
+      </div>
       <div className="cell-lg border-r-2 bg-[url('/backgrounds/lines.svg')]"></div>
       <div className="cell-lg border-l-2">
         <p>
