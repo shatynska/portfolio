@@ -19,7 +19,7 @@
   }
 
   body {
-    max-width: 1152px;
+    max-width: 72rem;
     margin: 0 auto;
     color: rgb(var(--foreground-dark-rgb));
     line-height: 1.75rem;
@@ -45,7 +45,7 @@
 
   main {
     display: grid;
-    grid-template-columns: 384px 384px 384px;
+    grid-template-columns: repeat(3, 24rem);
   }
 
   .cell-lg,
@@ -60,14 +60,14 @@
   }
 
   .cell-lg {
-    height: 576px;
+    height: 36rem;
   }
 
   .cell-md {
-    height: 192px;
+    height: 12rem;
   }
 
   .cell-sm {
-    height: 96px;
+    height: 6rem;
   }
 }
