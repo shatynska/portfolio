@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -23,7 +24,64 @@ export default function Home() {
           Shatynska
         </div>
       </div>
-      <div className="cell-lg border-r-2 bg-[url('/backgrounds/lines.svg')]"></div>
+      <div className="cell-lg p-0 justify-around justify-items-center border-r-2 bg-[url('/backgrounds/lines.svg')]">
+        <div className="flex justify-center items-center gap-8 h-24">
+          <Link href="">UA</Link>
+          <Link href="">EN</Link>
+          <Link href="">PL</Link>
+        </div>
+        <div className="flex justify-center gap-8 h-24">
+          <Image
+            src="/icons/phone.svg"
+            height="32"
+            width="32"
+            alt="phone icon"
+          ></Image>
+          <Image
+            src="/icons/email.svg"
+            height="32"
+            width="32"
+            alt="email icon"
+          ></Image>
+          <Image
+            src="/icons/skype.svg"
+            height="32"
+            width="32"
+            alt="skype icon"
+          ></Image>
+          <Image
+            src="/icons/address.svg"
+            height="32"
+            width="32"
+            alt="address icon"
+          ></Image>
+        </div>
+        <div className="flex flex-col justify-center gap-8 h-72">
+          <h2 className="text-center">
+            <Link href="">Design</Link>
+          </h2>
+          <h2 className="text-center">
+            <Link href="">Backend</Link>
+          </h2>
+          <h2 className="text-center">
+            <Link href="">Frontend</Link>
+          </h2>
+        </div>
+        <div className="flex justify-center gap-8 h-24">
+          <Image
+            src="/icons/linkedin.svg"
+            height="32"
+            width="32"
+            alt="phone icon"
+          ></Image>
+          <Image
+            src="/icons/github.svg"
+            height="32"
+            width="32"
+            alt="email icon"
+          ></Image>
+        </div>
+      </div>
       <div className="cell-lg border-l-2">
         <p>
           Web developer focused on&nbsp;backend with&nbsp;frontend background
