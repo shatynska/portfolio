@@ -1,0 +1,28 @@
+<svg height="576px" width="384" xmlns="http://www.w3.org/2000/svg">
+    <line
+    x1="0"
+    y1="96"
+    x2="384"
+    y2="96"
+    stroke-width="2"
+    stroke="#F5F5F5"
+    />
+
+    <line
+    x1="0"
+    y1="192"
+    x2="384"
+    y2="192"
+    stroke-width="2"
+    stroke="#F5F5F5"
+    />
+
+    <line
+    x1="0"
+    y1="480"
+    x2="384"
+    y2="480"
+    stroke-width="2"
+    stroke="#F5F5F5"
+    />
+</svg>

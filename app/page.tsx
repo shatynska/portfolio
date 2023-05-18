@@ -11,8 +11,8 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="cell-lg bg-primary-200"></div>
-      <div className="cell-lg border-r-2"></div>
+      <div className="cell-lg bg-primary-200 bg-[url('/backgrounds/line.svg')]"></div>
+      <div className="cell-lg border-r-2 bg-[url('/backgrounds/lines.svg')]"></div>
       <div className="cell-lg border-l-2">
         <p>
           Web developer focused on&nbsp;backend with&nbsp;frontend background
