@@ -43,22 +43,6 @@
     margin: 0.75rem 0;
   }
 
-  main {
-    display: grid;
-    grid-template-columns: repeat(3, 24rem);
-  }
-
-  .cell-lg,
-  .cell-md,
-  .cell-sm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    padding: 2.5rem;
-    border-color: rgba(245, 245, 245, 1);
-  }
-
   .cell-lg {
     height: 36rem;
   }
@@ -68,6 +52,7 @@
   }
 
   .cell-sm {
-    height: 6rem;
+    height: 4rem;
+    padding: 0;
   }
 }
