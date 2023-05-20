@@ -1,15 +1,13 @@
-import { ReactNode } from "react";
-
 export default function Cell({
-  children,
   className,
+  children,
 }: {
-  children: ReactNode;
-  className: string;
+  className?: string;
+  children?: React.ReactNode;
 }) {
   return (
     <div
-      className={`flex flex-col relative justify-center p-10 border-primary-200  ${className}`}
+      className={`relative flex flex-col justify-center border-primary-200 p-10 ${className}`}
     >
       {children}
     </div>

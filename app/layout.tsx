@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Manrope } from "next/font/google";
 
-const inter = Manrope({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin", "cyrillic"] });
 
 export const metadata = {
   title: "Web developer: design, backend and frontend",
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={manrope.className}>{children}</body>
     </html>
   );
 }
