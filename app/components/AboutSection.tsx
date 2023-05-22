@@ -16,8 +16,7 @@ export default function AboutSection() {
       <Cell className="cell-lg bg-primary-900 text-primary-100">
         <h2>Skills</h2>
         <ul>
-          <li>PHP</li>
-          <li>Laravel</li>
+          <li>PHP, Laravel, Inertia</li>
           <li>REST API</li>
           <li>MySQL, Redis</li>
           <li>Unit test</li>
@@ -26,6 +25,7 @@ export default function AboutSection() {
           <li>HTML, CSS, SASS, Tailwind</li>
           <li>Git, GitHub Actions, CI/CD</li>
           <li>Docker, Linux, VPS</li>
+          <li>UI/UX Design</li>
         </ul>
       </Cell>
       <Cell className="cell-lg">

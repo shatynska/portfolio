@@ -27,7 +27,7 @@ export default function SelectedProjects() {
             Stack: PHP, Laravel, TypeScript, React, Inertia, Tailwind
           </p>
         </Cell>
-        <Cell className="cell-md border-b-2 border-primary-900 bg-primary-800 text-primary-100">
+        <Cell className="cell-md bg-primary-800 text-primary-100">
           <h3 className="text-xl">Drohobych Psychotherapists Union</h3>
           <p className="text-sm">CMS</p>
         </Cell>
@@ -49,7 +49,7 @@ export default function SelectedProjects() {
             Stack: PHP, Laravel, React, TypeScript, Tailwind
           </p>
         </Cell>
-        <Cell className="cell-md border-b-2 border-primary-800 bg-primary-700 text-primary-100">
+        <Cell className="cell-md bg-primary-700 text-primary-100">
           <h3 className="text-xl">Private psychology practice</h3>
           <p className="text-sm">Web application</p>
         </Cell>
@@ -69,14 +69,14 @@ export default function SelectedProjects() {
           <p className="text-sm">Role: UI/UX Designer, Frontend developer</p>
           <p className="text-sm">Stack: TypeScript, React, Next.js, Tailwind</p>
         </Cell>
-        <Cell className="cell-md border-b-2 border-primary-700 bg-primary-600 text-primary-100">
+        <Cell className="cell-md bg-primary-600 text-primary-100">
           <h3 className="text-xl">Web portfolio</h3>
           <p className="text-sm">Website</p>
         </Cell>
       </article>
 
       <section className="flex">
-        <Cell className="cell-sm border-r-2"></Cell>
+        <Cell className="cell-sm border-l-2"></Cell>
         <Cell className="cell-sm items-center bg-primary-700 text-primary-100">
           Other projects
         </Cell>
