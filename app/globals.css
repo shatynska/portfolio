@@ -19,7 +19,7 @@
   }
 
   body {
-    max-width: 72rem;
+    width: 72rem;
     margin: 0 auto;
     color: rgb(var(--foreground-dark-rgb));
     line-height: 1.75rem;
@@ -27,7 +27,7 @@
 
   h2 {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 2rem;
   }
 
