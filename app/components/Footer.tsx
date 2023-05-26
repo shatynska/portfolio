@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <section className="flex">
         <Cell className="cell-sm items-center bg-primary-900 text-primary-100">
-          Contact me
+          Contact me &gt;
         </Cell>
         <Cell className="cell-sm border-b-2 border-primary-100 bg-primary-200"></Cell>
         <Cell className="cell-sm border-r-2"></Cell>
