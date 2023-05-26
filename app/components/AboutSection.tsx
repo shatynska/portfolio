@@ -6,8 +6,12 @@ export default function AboutSection() {
     <section className="flex">
       <Cell className="cell-lg border-l-2">
         <p>
-          Web developer focused on&nbsp;backend with&nbsp;frontend background
-          based in&nbsp;Ukraine.
+          I'm a full-stack web developer from Ukraine. I like to create designs
+          and do front-end things.
+        </p>
+        <p>
+          But my core interest is in the backend: developing clear basic logic,
+          suitable architecture, and solving different challenges.
         </p>
         <p>
           Main technology stack used: PHP, Laravel, MySQL, TypeScript, Next.js.
