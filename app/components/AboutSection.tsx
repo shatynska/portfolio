@@ -5,16 +5,15 @@ export default function AboutSection() {
   return (
     <section className="flex">
       <Cell className="cell-lg border-l-2">
+        <p>I'm a full-stack web developer from Ukraine.</p>
+        <p>I like to create designs and work on front-end tasks.</p>
         <p>
-          I'm a full-stack web developer from Ukraine. I like to create designs
-          and do front-end things.
+          However, my core interest is in the backend: developing clear basic
+          logic, suitable architecture, and solving different problems.
         </p>
         <p>
-          But my core interest is in the backend: developing clear basic logic,
-          suitable architecture, and solving different challenges.
-        </p>
-        <p>
-          Main technology stack used: PHP, Laravel, MySQL, TypeScript, Next.js.
+          The main technologies I used are PHP, Laravel, MySQL, TypeScript,
+          Next.js.
         </p>
       </Cell>
       <Cell className="cell-lg bg-primary-900 text-primary-100">
