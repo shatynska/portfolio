@@ -21,7 +21,7 @@ export default function SelectedProjects() {
             className="object-cover"
           />
         </Cell>
-        <Cell className="cell-md border-b-2">
+        <Cell className="cell-md border-b-2 bg-primary-100">
           <p className="text-sm">Role: UI/UX Designer, Fullstack developer</p>
           <p className="text-sm">
             Stack: PHP, Laravel, TypeScript, React, Inertia, Tailwind
@@ -45,7 +45,7 @@ export default function SelectedProjects() {
             className="object-cover"
           />
         </Cell>
-        <Cell className="cell-md border-b-2">
+        <Cell className="cell-md border-b-2 bg-primary-100">
           <p className="text-sm">Role: UI/UX Designer, Fullstack developer</p>
           <p className="text-sm">
             Stack: PHP, Laravel, React, TypeScript, Tailwind
@@ -69,7 +69,7 @@ export default function SelectedProjects() {
             className="object-cover"
           />
         </Cell>
-        <Cell className="cell-md border-b-2">
+        <Cell className="cell-md border-b-2 bg-primary-100">
           <p className="text-sm">Role: UI/UX Designer, Frontend developer</p>
           <p className="text-sm">Stack: TypeScript, React, Next.js, Tailwind</p>
         </Cell>
@@ -80,11 +80,11 @@ export default function SelectedProjects() {
       </article>
 
       <section className="flex">
-        <Cell className="cell-sm border-l-2"></Cell>
+        <Cell className="cell-sm border-l-2 bg-primary-100"></Cell>
         <Cell className="cell-sm items-center bg-primary-700 text-primary-100">
           Other projects &gt;
         </Cell>
-        <Cell className="cell-sm border-b-2 border-primary-100 bg-primary-200"></Cell>
+        <Cell className="cell-sm bg-primary-200"></Cell>
       </section>
     </section>
   );
