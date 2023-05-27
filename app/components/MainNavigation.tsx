@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function MainNavigation() {
   return (
-    <nav className="cell-lg flex w-96 flex-col justify-around justify-items-center border-r-2 border-primary-200 bg-primary-100 bg-[url('/backgrounds/lines.svg')] py-0 font-bold ">
+    <nav className="cell-lg flex w-96 flex-col justify-around justify-items-center border-r-2 border-primary-200 bg-primary-50 bg-[url('/backgrounds/lines.svg')] py-0 font-bold ">
       <div className="flex h-24 items-center justify-center gap-8">
         <Link href="">UA</Link>
         <Link href="">EN</Link>

@@ -4,7 +4,7 @@ import Cell from "../components/Cell";
 export default function AboutSection() {
   return (
     <section className="flex">
-      <Cell className="cell-lg border-l-2 bg-primary-100">
+      <Cell className="cell-lg border-l-2 bg-primary-50">
         <p>
           I'm a full-stack web developer from Ukraine. I like to create designs
           and work on front-end tasks.
