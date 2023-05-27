@@ -23,7 +23,7 @@ jobs:
       - name: Build and push to Docker Hub
         uses: docker/build-push-action@v4
         with:
-          context: ./_docker/app/Dockerfile
+          context: .
           push: true
           tags: shatynska/shatynskacom:latest
 
@@ -37,9 +37,9 @@ jobs:
       - name: Redeploy stack
         uses: luminos-company/portami@v1.1
         with:
-          endpoint: 'https://admin.psypra.com'
+          endpoint: "https://admin.psypra.com"
           access_token: ${{ secrets.PORTAINER_ACCESS_TOKEN }}
-          stack_id: 'shatynska_com'
-          file_path: '.github/stack/production.yml'
+          stack_id: "shatynska_com"
+          file_path: ".github/stack/production.yml"
           prune: true
           pull: true
