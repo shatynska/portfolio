@@ -12,7 +12,7 @@ export default function AboutSection() {
           logic, suitable architecture, and solving different problems.
         </p>
         <p>
-          The main technologies I used are PHP, Laravel, MySQL, TypeScript,
+          The main technologies I use are PHP, Laravel, MySQL, TypeScript,
           Next.js.
         </p>
       </Cell>

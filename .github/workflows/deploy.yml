@@ -22,3 +22,20 @@ jobs:
           context: .
           push: true
           tags: shatynska/shatynskacom:latest
+
+  redeploy:
+    name: Redeploy stack to Portainer
+    runs-on: ubuntu-latest
+    needs: build-container
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Redeploy stack
+        uses: luminos-company/portami@v1.1
+        with:
+          endpoint: 'https://admin.psypra.com'
+          access_token: ${{ secrets.PORTAINER_ACCESS_TOKEN }}
+          stack_id: 'shatynska_com'
+          file_path: '.github/stack/production.yml'
+          prune: true
+          pull: true
