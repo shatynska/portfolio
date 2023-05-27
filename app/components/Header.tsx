@@ -16,7 +16,7 @@ export default function Header() {
           priority
         />
       </Cell>
-      <Cell className="cell-lg justify-around px-16 gap-20 bg-primary-200 bg-[url('/backgrounds/line.svg')]">
+      <Cell className="cell-lg justify-around gap-20 bg-primary-300 bg-[url('/backgrounds/line.svg')] px-16">
         <h1 className="text-[2.5rem] font-bold leading-[3.25rem]">
           Web
           <br />

@@ -7,11 +7,11 @@ export default function Footer() {
         <Cell className="cell-sm items-center bg-primary-900 text-primary-100">
           Contact me &gt;
         </Cell>
-        <Cell className="cell-sm bg-primary-200"></Cell>
+        <Cell className="cell-sm bg-primary-300"></Cell>
         <Cell className="cell-sm border-r-2 bg-primary-50"></Cell>
       </section>
       <section className="flex">
-        <Cell className="cell-sm bg-primary-200"></Cell>
+        <Cell className="cell-sm bg-primary-300"></Cell>
         <Cell className="cell-sm bg-primary-50"></Cell>
         <Cell className="cell-sm items-center bg-primary-500 text-sm text-primary-100">
           © 2023 Helen Shatynska
