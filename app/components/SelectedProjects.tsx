@@ -28,7 +28,7 @@ export default function SelectedProjects() {
           </p>
         </Cell>
         <Cell className="cell-md bg-primary-800 text-primary-100">
-          <h3 className="text-xl font-semibold">
+          <h3>
             Drohobych Psychotherapists Union
           </h3>
           <p className="text-sm">CMS</p>
@@ -52,7 +52,7 @@ export default function SelectedProjects() {
           </p>
         </Cell>
         <Cell className="cell-md bg-primary-700 text-primary-100">
-          <h3 className="text-xl  font-semibold">
+          <h3>
             Private psychology practice
           </h3>
           <p className="text-sm">Web application</p>
@@ -74,7 +74,7 @@ export default function SelectedProjects() {
           <p className="text-sm">Stack: TypeScript, React, Next.js, Tailwind</p>
         </Cell>
         <Cell className="cell-md bg-primary-600 text-primary-100">
-          <h3 className="text-xl font-semibold">Web portfolio</h3>
+          <h3>Web portfolio</h3>
           <p className="text-sm">Website</p>
         </Cell>
       </article>
