@@ -6,7 +6,7 @@ export default function SelectedProjects() {
   const selectedProjects = [6, 2, 3];
 
   return (
-    <section className="flex w-96 gap-10 overflow-x-scroll md:w-[768px] lg:w-auto lg:flex-col lg:gap-0 lg:overflow-auto">
+    <section className="flex w-screen max-w-112 gap-10 overflow-x-scroll md:w-192 md:max-w-none lg:w-auto lg:flex-col lg:gap-0 lg:overflow-auto">
       {/* {selectedProjects.map((id) => (
         <Project projectId={id} />
       ))} */}
@@ -76,11 +76,11 @@ export default function SelectedProjects() {
       </article>
 
       <section className="hidden lg:flex">
-        <Cell className="cell-sm border-l-2 bg-primary-50"></Cell>
-        <Cell className="cell-sm items-center bg-primary-700 text-primary-100">
+        <Cell className="h-18 border-l-2 bg-primary-50"></Cell>
+        <Cell className="h-18 items-center bg-primary-700 text-primary-100">
           Other projects &gt;
         </Cell>
-        <Cell className="cell-sm bg-primary-300"></Cell>
+        <Cell className="h-18 bg-primary-300"></Cell>
       </section>
     </section>
   );

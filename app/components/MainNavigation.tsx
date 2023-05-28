@@ -1,14 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import Cell from "./Cell";
 
-export default function MainNavigation() {
+export default function MainNavigation({ className }: { className?: string }) {
   return (
-    <nav className="cell-lg hidden w-96 flex-col justify-around justify-items-center border-r-2 border-primary-200 bg-primary-50 bg-[url('/backgrounds/lines.svg')] py-0 lg:flex  ">
-      <div className="flex h-24 items-center justify-center gap-8 font-semibold">
+    <Cell
+      className={`h-144 border-x-2 bg-primary-50 bg-[url("/backgrounds/lines.svg")] ${className}`}
+    >
+      <nav className="flex h-24 items-center justify-center gap-8 font-semibold">
         <Link href="">UA</Link>
         <Link href="">EN</Link>
         <Link href="">PL</Link>
-      </div>
+      </nav>
       <div className="flex h-24 justify-center gap-8">
         <Image src="/icons/phone.svg" height="32" width="32" alt="phone icon" />
         <Image src="/icons/email.svg" height="32" width="32" alt="email icon" />
@@ -20,7 +23,7 @@ export default function MainNavigation() {
           alt="address icon"
         />
       </div>
-      <div className="flex h-72 flex-col justify-center gap-8 text-center">
+      <nav className="flex h-72 flex-col justify-center gap-8 text-center">
         <h2>
           <Link href="">Design</Link>
         </h2>
@@ -30,7 +33,7 @@ export default function MainNavigation() {
         <h2>
           <Link href="">Frontend</Link>
         </h2>
-      </div>
+      </nav>
       <div className="flex h-24 justify-center gap-8">
         <Image
           src="/icons/linkedin.svg"
@@ -45,6 +48,6 @@ export default function MainNavigation() {
           alt="email icon"
         />
       </div>
-    </nav>
+    </Cell>
   );
 }

@@ -19,7 +19,7 @@
   }
 
   body {
-    display:flex;
+    display: flex;
     justify-content: center;
     max-width: 72rem;
     margin: 0 auto;
@@ -50,10 +50,6 @@
 
   li {
     margin: 0.75rem 0;
-  }
-
-  .cell-lg {
-    height: 36rem;
   }
 
   .cell-md {
