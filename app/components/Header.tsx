@@ -5,7 +5,7 @@ import developerImage from "/public/developer.jpg";
 
 export default function Header() {
   return (
-    <header className="flex">
+    <header className="flex flex-col-reverse md:flex-row">
       <Cell className="cell-lg">
         <Image
           src={developerImage}

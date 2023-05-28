@@ -19,7 +19,9 @@
   }
 
   body {
-    width: 72rem;
+    display:flex;
+    justify-content: center;
+    max-width: 72rem;
     margin: 0 auto;
     color: rgb(var(--foreground-dark-rgb));
     line-height: 1.75rem;
