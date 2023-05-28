@@ -6,7 +6,7 @@ import developerImage from "/public/developer.jpg";
 export default function Header() {
   return (
     <header className="flex flex-col md:flex-row">
-      <Cell className="h-screen max-h-192 min-h-128 gap-44 bg-primary-950 bg-[url('/backgrounds/line-dark.svg')] bg-contain bg-center bg-no-repeat px-14 text-primary-50 md:h-144 md:bg-primary-300 md:bg-[url('/backgrounds/line.svg')] md:font-bold md:text-primary-900">
+      <Cell className="h-144 gap-44 bg-primary-900 bg-[url('/backgrounds/line-dark.svg')] bg-contain bg-center bg-no-repeat px-14 text-primary-50 md:bg-primary-300 md:bg-[url('/backgrounds/line.svg')] md:font-bold md:text-primary-900">
         <h1 className="text-[2.5rem] leading-[3.25rem]">
           Web
           <br />
@@ -18,7 +18,7 @@ export default function Header() {
           Shatynska
         </div>
       </Cell>
-      <Cell className="h-screen max-h-192 min-h-128 md:order-first md:h-144">
+      <Cell className="h-144 md:order-first">
         <Image
           src={developerImage}
           alt="Web developer picture"
