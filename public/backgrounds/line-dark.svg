@@ -1,10 +1,10 @@
 <svg height="576px" width="384" xmlns="http://www.w3.org/2000/svg">
     <line
     x1="0"
-    y1="384"
+    y1="344"
     x2="384"
-    y2="192"
+    y2="152"
     stroke-width="2"
-    stroke="#303030"
+    stroke="#212121"
     />
 </svg>
