@@ -22,6 +22,10 @@ module.exports = {
         },
       },
     },
+    screens: {
+      md: "768px",
+      lg: "1152px",
+    },
   },
   plugins: [],
 };
