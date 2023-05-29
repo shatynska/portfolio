@@ -1,9 +1,14 @@
 import Image from "next/image";
 import Project from "../components/Project";
 import Cell from "../components/Cell";
+import { prisma } from "@/lib/prisma";
 
-export default function SelectedProjects() {
-  const selectedProjects = [6, 2, 3];
+export default async function SelectedProjects() {
+  const roles = await prisma.role.findFirst({
+    where: {
+      id: 1,
+    },
+  });
 
   return (
     <section className="flex w-screen max-w-112 gap-10 overflow-x-scroll md:w-192 md:max-w-none lg:w-auto lg:flex-col lg:gap-0 lg:overflow-auto">
@@ -26,7 +31,9 @@ export default function SelectedProjects() {
           <p className="text-sm">CMS</p>
         </Cell>
         <Cell className="cell-md border-b-2 bg-primary-50">
-          <p className="text-sm">Role: UI/UX Designer, Fullstack developer</p>
+          <p className="text-sm">
+            Role: UI/UX {roles?.title}, Fullstack developer
+          </p>
           <p className="text-sm">
             Stack: PHP, Laravel, TypeScript, React, Inertia, Tailwind
           </p>
@@ -84,4 +91,4 @@ export default function SelectedProjects() {
       </section>
     </section>
   );
-}
+} 
