@@ -18,6 +18,23 @@ services:
       - traefik-public
       - default
 
+  postgres:
+    image: postgres:15
+    restart: always
+    volumes:
+      - /var/www/shatynska.com/tmp/db:/var/lib/postgres
+    environment:
+      POSTGRES_USER: shatynska
+      POSTGRES_PASSWORD: shatynska
+      POSTGRES_DB: shatynska
+    ports:
+      - 5432:5432
+    labels:
+      - traefik.enable=false
+    networks:
+      - traefik-public
+      - default
+
 networks:
   traefik-public:
     external: true
