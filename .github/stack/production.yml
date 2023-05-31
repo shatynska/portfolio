@@ -18,11 +18,11 @@ services:
       - traefik-public
       - default
 
-  postgres:
+  postgresql:
     image: postgres:15
     restart: always
     volumes:
-      - /var/www/shatynska.com/tmp/db:/var/lib/postgres
+      - /var/www/shatynska.com/tmp/db:/var/lib/postgresql
     environment:
       POSTGRES_USER: shatynska
       POSTGRES_PASSWORD: shatynska
