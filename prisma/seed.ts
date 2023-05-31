@@ -11,6 +11,7 @@ async function main() {
       title: "design",
     },
   });
+  
   const backend = await prisma.role.upsert({
     where: { id: 2 },
     update: {},
@@ -19,12 +20,40 @@ async function main() {
       title: "backend",
     },
   });
+
   const frontend = await prisma.role.upsert({
     where: { id: 3 },
     update: {},
     create: {
       id: 3,
       title: "frontend",
+    },
+  });
+
+  const website = await prisma.type.upsert({
+    where: { id: 1 },
+    update: {},
+    create: {
+      id: 1,
+      title: "website",
+    },
+  });
+
+  const application = await prisma.type.upsert({
+    where: { id: 2 },
+    update: {},
+    create: {
+      id: 2,
+      title: "web application",
+    },
+  });
+
+  const cms = await prisma.type.upsert({
+    where: { id: 3 },
+    update: {},
+    create: {
+      id: 3,
+      title: "web application",
     },
   });
 

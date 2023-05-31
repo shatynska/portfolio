@@ -10,6 +10,12 @@ export default async function SelectedProjects() {
     },
   });
 
+  const types = await prisma.type.findFirst({
+    where: {
+      id: 1,
+    },
+  });
+
   return (
     <section className="flex w-screen max-w-112 gap-10 overflow-x-scroll md:w-192 md:max-w-none lg:w-auto lg:flex-col lg:gap-0 lg:overflow-auto">
       {/* {selectedProjects.map((id) => (
@@ -28,7 +34,7 @@ export default async function SelectedProjects() {
         </Cell>
         <Cell className="cell-md bg-primary-800 text-primary-100 lg:order-last">
           <h3>Drohobych Psychotherapists Union</h3>
-          <p className="text-sm">CMS</p>
+          <p className="text-sm">{types?.title}</p>
         </Cell>
         <Cell className="cell-md border-b-2 bg-primary-50">
           <p className="text-sm">
@@ -91,4 +97,4 @@ export default async function SelectedProjects() {
       </section>
     </section>
   );
-} 
+}
