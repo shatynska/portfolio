@@ -55,6 +55,15 @@ CREATE TABLE "ProjectsOnRoles" (
 );
 
 -- CreateIndex
+CREATE UNIQUE INDEX "Type_title_key" ON "Type"("title");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Role_title_key" ON "Role"("title");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Topic_title_key" ON "Topic"("title");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "ProjectsOnRoles_id_key" ON "ProjectsOnRoles"("id");
 
 -- AddForeignKey

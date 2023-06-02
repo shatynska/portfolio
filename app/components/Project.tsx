@@ -1,21 +1,38 @@
 import Image from "next/image";
 import Cell from "./Cell";
+import { prisma } from "@/lib/prisma";
 
-export default function Project({ projectId }: { projectId?: number }) {
+export default async function Project({ projectId }: { projectId?: number }) {
+  const project = await prisma.project.findFirst({
+    where: {
+      id: projectId,
+    },
+  });
   return (
-    <article className="flex">
-      <Cell className="cell-md border-b-2 border-primary-100 bg-primary-300">
+    <article className="flex flex-col lg:flex-row">
+      <Cell className="cell-md items-center border-b-2 border-primary-50 bg-primary-300">
         <Image
-          src="/projects/pigeons.svg"
-          alt="Web developer picture"
-          width="220"
-          height="100"
+          src={project?.image || "default.jpg"}
+          alt={project?.title + "picture"}
+          fill
           className="object-cover"
         />
       </Cell>
-      <Cell className="cell-md border-b-2"></Cell>
-      <Cell className="cell-md border-b-2 border-primary-700 bg-primary-800 text-primary-100">
-        {projectId}
+      <Cell className="cell-md bg-primary-800 text-primary-100 lg:order-last">
+        <h3>{project?.title}</h3>
+        <p className="text-sm">
+          {/* {project?.types.map((type) => (
+          {type.title}
+          ))} */}
+        </p>
+      </Cell>
+      <Cell className="cell-md border-b-2 bg-primary-50">
+        <p className="text-sm">
+          {/* {project?.roles.map((role) => (
+          {role.title}
+          ))} */}
+        </p>
+        <p className="text-sm">{project?.stack}</p>
       </Cell>
     </article>
   );

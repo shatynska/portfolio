@@ -1,8 +1,22 @@
 import { PrismaClient } from "@prisma/client";
+import PreviousMap from "postcss/lib/previous-map";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({ log: ["query"] });
 
 async function main() {
+  const project1 = await prisma.project.upsert({
+    where: { id: 1 },
+    update: {},
+    create: {
+      id: 1,
+      title: "Project1",
+      stack: "Stack of Project 1",
+      url: "https://shatynska.com",
+      gitHubUrl: "https://github.com/shatynska/shatynska.com",
+      image: "/projects/pigeons.svg",
+    },
+  });
+
   const design = await prisma.role.upsert({
     where: { id: 1 },
     update: {},
@@ -11,7 +25,7 @@ async function main() {
       title: "design",
     },
   });
-  
+
   const backend = await prisma.role.upsert({
     where: { id: 2 },
     update: {},
@@ -53,13 +67,11 @@ async function main() {
     update: {},
     create: {
       id: 3,
-      title: "web application",
+      title: "cms",
     },
   });
-
-
-  console.log({ design, backend });
 }
+
 main()
   .then(async () => {
     await prisma.$disconnect();
