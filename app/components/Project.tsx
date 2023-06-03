@@ -12,10 +12,10 @@ export default async function Project({ projectId }: { projectId?: number }) {
     <article className="flex flex-col lg:flex-row">
       <Cell className="cell-md items-center border-b-2 border-primary-50 bg-primary-300">
         <Image
-          src={project?.image || "default.jpg"}
+          src={project?.image || "/default.jpg"}
           alt={project?.title + "picture"}
           fill
-          className="object-cover"
+          className="object-contain"
         />
       </Cell>
       <Cell className="cell-md bg-primary-800 text-primary-100 lg:order-last">
@@ -32,7 +32,7 @@ export default async function Project({ projectId }: { projectId?: number }) {
           {role.title}
           ))} */}
         </p>
-        <p className="text-sm">{project?.stack}</p>
+        <p className="text-sm">Stack: {project?.stack}</p>
       </Cell>
     </article>
   );

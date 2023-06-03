@@ -9,8 +9,8 @@ async function main() {
     update: {},
     create: {
       id: 1,
-      title: "Project1",
-      stack: "Stack of Project 1",
+      title: "Web portfolio",
+      stack: "TypeScript, React, Next.js, Postgresql, Prisma, Tailwind",
       url: "https://shatynska.com",
       gitHubUrl: "https://github.com/shatynska/shatynska.com",
       image: "/projects/pigeons.svg",
