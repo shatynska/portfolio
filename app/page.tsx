@@ -8,7 +8,6 @@ export default function Home() {
     <main>
       <Header />
       <AboutSection />
-      {/* @ts-expect-error Server Component */}
       <SelectedProjects />
       <Footer />
     </main>
