@@ -9,7 +9,7 @@ export default async function Project({ projectId }: { projectId?: number }) {
     },
   });
   return (
-    <article className="flex flex-col lg:flex-row">
+    <article className="flex flex-col lg:flex-row" key={project?.id}>
       <Cell className="cell-md items-center border-b-2 border-primary-50 bg-primary-300">
         <Image
           src={project?.image || "/default.jpg"}
