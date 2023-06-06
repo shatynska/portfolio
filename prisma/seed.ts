@@ -12,7 +12,7 @@ async function main() {
     update: {},
     create: {
       id: 1,
-      title: "UI/UX designer",
+      title: "Frontend developer",
     },
   });
 
@@ -30,7 +30,7 @@ async function main() {
     update: {},
     create: {
       id: 3,
-      title: "Frontend developer",
+      title: "UI/UX designer",
     },
   });
 
