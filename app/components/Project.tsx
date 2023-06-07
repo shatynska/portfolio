@@ -32,7 +32,11 @@ export default async function Project({ projectId }: { projectId?: number }) {
         <h3>{project?.title}</h3>
         <p>
           Roles:&nbsp;
-          {project?.roles.map((role) => role.role.title + " ")}
+          {project?.roles.map((role) => (
+            <span className="after:content-[',\a0'] last:content-none">
+              {role.role.title}
+            </span>
+          ))}
         </p>
         <p>Stack: {project?.stack}</p>
       </section>
