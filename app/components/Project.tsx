@@ -18,8 +18,7 @@ export default async function Project({ projectId }: { projectId?: number }) {
   return (
     <Cell
       key={project?.id}
-      className="flex h-144 gap-10
-       border-primary-50 bg-primary-300 text-sm"
+      className="flex h-144 gap-10 text-sm"
     >
       <Image
         src={project?.image || "/default.jpg"}
