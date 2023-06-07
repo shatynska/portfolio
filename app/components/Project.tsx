@@ -16,16 +16,13 @@ export default async function Project({ projectId }: { projectId?: number }) {
     },
   });
   return (
-    <Cell
-      key={project?.id}
-      className="flex h-144 gap-10 text-sm"
-    >
+    <Cell key={project?.id} className="flex h-144 gap-10 text-sm">
       <Image
         src={project?.image || "/default.jpg"}
         alt={project?.title + "picture"}
         width="384"
         height="192"
-        className="object-contain"
+        className="h-48 w-96 overflow-clip object-contain"
       />
       <section className="flex flex-col gap-5 leading-6">
         <div>{project?.type}</div>

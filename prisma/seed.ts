@@ -99,6 +99,72 @@ async function main() {
       },
     },
   });
+
+  await prisma.project.upsert({
+    where: { id: 3 },
+    update: {},
+    create: {
+      id: 3,
+      title: "Drohobych Psychotherapists Union",
+      type: "CMS",
+      stack: "PHP, Laravel, TypeScript, React, Inertia, Tailwind.",
+      url: "https://my.dro.psypra.com",
+      gitHubUrl: "https://github.com/shatynska/my.dro.psypra.com",
+      image: "/projects/dro.svg",
+      roles: {
+        create: [
+          {
+            role: {
+              connect: { id: 1 },
+            },
+          },
+          {
+            role: {
+              connect: { id: 2 },
+            },
+          },
+          {
+            role: {
+              connect: { id: 3 },
+            },
+          },
+        ],
+      },
+    },
+  });
+
+  await prisma.project.upsert({
+    where: { id: 4 },
+    update: {},
+    create: {
+      id: 4,
+      title: "Private psychology practice",
+      type: "Web application",
+      stack: "PHP, Laravel, TypeScript, React, Next.js, Tailwind.",
+      url: "https://shatynska.in.ua",
+      gitHubUrl: "https://github.com/shatynska/shatynska.in.ua",
+      image: "/projects/psy.svg",
+      roles: {
+        create: [
+          {
+            role: {
+              connect: { id: 1 },
+            },
+          },
+          {
+            role: {
+              connect: { id: 2 },
+            },
+          },
+          {
+            role: {
+              connect: { id: 3 },
+            },
+          },
+        ],
+      },
+    },
+  });
 }
 
 main()
