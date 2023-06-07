@@ -27,18 +27,18 @@ export default async function Project({ projectId }: { projectId?: number }) {
         height="192"
         className="object-contain"
       />
-      <section>
-        <p>{project?.type}</p>
+      <section className="flex flex-col gap-5 leading-6">
+        <div>{project?.type}</div>
         <h3>{project?.title}</h3>
-        <p>
+        <div>
           Roles:&nbsp;
           {project?.roles.map((role) => (
             <span className="after:content-[',\a0'] last:content-none">
               {role.role.title}
             </span>
           ))}
-        </p>
-        <p>Stack: {project?.stack}</p>
+        </div>
+        <div>Stack: {project?.stack}</div>
       </section>
     </Cell>
   );
