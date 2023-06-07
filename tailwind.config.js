@@ -29,12 +29,17 @@ module.exports = {
         144: "36rem",
         160: "40rem",
         192: "48rem",
+        288: "72rem",
       },
       minHeight: {
         128: "32rem",
       },
       maxWidth: {
+        96: "24rem",
         112: "28rem",
+      },
+      minWidth: {
+        96: "24rem",
       },
     },
     screens: {
