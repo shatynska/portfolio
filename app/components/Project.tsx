@@ -16,7 +16,10 @@ export default async function Project({ projectId }: { projectId?: number }) {
     },
   });
   return (
-    <Cell key={project?.id} className="flex h-144 gap-10 text-sm">
+    <Cell
+      key={project?.id}
+      className="keen-slider__slide flex h-144 gap-10 text-sm"
+    >
       <Image
         src={project?.image || "/default.jpg"}
         alt={project?.title + "picture"}

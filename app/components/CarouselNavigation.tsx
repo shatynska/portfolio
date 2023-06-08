@@ -1,11 +1,17 @@
 import Cell from "../components/Cell";
 
-export default function CarouselNavigation() {
+export default function CarouselNavigation({
+  children,
+}: {
+  children?: React.ReactNode;
+}) {
   return (
-    <section className="hidden">
-      <Cell className="h-18 border-l-2 bg-primary-50"></Cell>
-      <Cell className="h-18 items-center bg-primary-700 text-primary-100"></Cell>
-      <Cell className="h-18 bg-primary-300"></Cell>
+    <section className="flex flex-row">
+      <Cell className="hidden h-18 border-l-2 bg-primary-50 md:block"></Cell>
+      <Cell className="h-18 items-center bg-primary-700 text-primary-100">
+        {children}
+      </Cell>
+      <Cell className="hidden h-18 bg-primary-300 lg:block"></Cell>
     </section>
   );
 }
