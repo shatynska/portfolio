@@ -2,9 +2,8 @@
 import { prisma } from "@/lib/prisma";
 import Carousel from "../components/Carousel";
 import Project from "../components/Project";
-import CarouselNavigation from "../components/CarouselNavigation";
 
-export default async function SelectedProjects() {
+export default async function Projects() {
   const projects = await prisma.project.findMany({
     select: {
       id: true,
