@@ -41,15 +41,15 @@ export default function Carousel({
       </div>
       {loaded && instanceRef.current && (
         <CarouselNavigation>
-          <div className="dots">
-            <Arrow
-              left
-              onClick={(e: any) =>
-                e.stopPropagation() || instanceRef.current?.prev()
-              }
-              disabled
-            />
-
+          <div className="flex flex-row items-center justify-between">
+          <Arrow
+            left
+            onClick={(e: any) =>
+              e.stopPropagation() || instanceRef.current?.prev()
+            }
+            disabled
+          />
+          <div className="flex items-center justify-between">
             {[
               ...Array(instanceRef.current.track.details.slides.length).keys(),
             ].map((idx) => {
@@ -59,16 +59,17 @@ export default function Carousel({
                   onClick={() => {
                     instanceRef.current?.moveToIdx(idx);
                   }}
-                  className={"dot" + (currentSlide === idx ? " active" : "")}
+                  className={" w-2 h-2 m-2 rounded " + (currentSlide === idx ? " bg-primary-50" : " bg-primary-500")}
                 ></button>
               );
             })}
-            <Arrow
-              onClick={(e: any) =>
-                e.stopPropagation() || instanceRef.current?.next()
-              }
-              disabled
-            />
+          </div>
+          <Arrow
+            onClick={(e: any) =>
+              e.stopPropagation() || instanceRef.current?.next()
+            }
+            disabled
+          />
           </div>
         </CarouselNavigation>
       )}
@@ -85,12 +86,12 @@ function Arrow(props: {
   return (
     <svg
       onClick={props.onClick}
-      className={`arrow ${
+      className={`cursor-pointer ${
         props.left ? "arrow--left" : "arrow--right"
       } ${disabeld}`}
       xmlns="http://www.w3.org/2000/svg"
-      width="32"
-      height="32"
+      width="40"
+      height="40"
       viewBox="0 0 32 32"
       fill="none"
     >
