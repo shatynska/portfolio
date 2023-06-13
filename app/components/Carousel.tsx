@@ -34,7 +34,7 @@ export default function Carousel({
       <div className="navigation-wrapper">
         <div
           ref={sliderRef}
-          className="keen-slider  [&>*:nth-child(3n)]:bg-primary-800 [&>*:nth-child(3n)]:text-primary-100 [&>*:nth-child(3n+1)]:bg-primary-300 [&>*:nth-child(3n+2)]:bg-primary-50"
+          className="keen-slider [&>*:nth-child(3n)]:bg-primary-800 [&>*:nth-child(3n)]:divide-primary-700 [&>*:nth-child(3n+2)]:divide-primary-300 [&>*:nth-child(3n+1)]:divide-primary-50 [&>*:nth-child(3n)]:text-primary-100 [&>*:nth-child(3n+1)]:bg-primary-300 [&>*:nth-child(3n+2)]:bg-primary-50"
         >
           {children}
         </div>
@@ -90,25 +90,25 @@ function Arrow(props: {
         props.left ? "arrow--left" : "arrow--right"
       } ${disabeld}`}
       xmlns="http://www.w3.org/2000/svg"
-      width="40"
-      height="40"
+      width="32"
+      height="32"
       viewBox="0 0 32 32"
       fill="none"
     >
       {props.left && (
         <path
-          d="M18.6667 9.33329L12 16L18.6667 22.6666"
+          d="M14 28L2 16L14 4"
           stroke="white"
-          stroke-width="1.33333"
+          stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
       )}
       {!props.left && (
         <path
-          d="M13.3333 22.6667L20 16L13.3333 9.33337"
+          d="M18 28L30 16L18 4"
           stroke="white"
-          stroke-width="1.33333"
+          stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
