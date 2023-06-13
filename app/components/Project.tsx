@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Cell from "./Cell";
 import { prisma } from "@/lib/prisma";
+import Link from "next/link";
 
 export default async function Project({ projectId }: { projectId?: number }) {
   const project = await prisma.project.findUnique({
@@ -44,8 +45,15 @@ export default async function Project({ projectId }: { projectId?: number }) {
         </div>
         <div className="h-16 overflow-hidden">Stack: {project?.stack}</div>
       </section>
-      <section className="h-24 overflow-hidden">
-        
+      <section className="justify-center inline-block items-center gap-8 h-24 overflow-hidden flex">
+      <Link href={project?.gitHubUrl || ''}  >      
+        <Image
+            src="/icons/github.svg"
+            height="32"
+            width="32"
+            alt="github icon"
+          />
+      </Link>
       </section>
     </Cell>
   );
