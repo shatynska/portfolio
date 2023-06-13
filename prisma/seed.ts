@@ -6,13 +6,13 @@ const prisma = new PrismaClient({ log: ["query"] });
 async function main() {
   await prisma.project.deleteMany();
   await prisma.role.deleteMany();
-
+  
   await prisma.role.upsert({
     where: { id: 1 },
     update: {},
     create: {
       id: 1,
-      title: "Frontend developer",
+      title: "UI/UX designer",
     },
   });
 
@@ -21,7 +21,7 @@ async function main() {
     update: {},
     create: {
       id: 2,
-      title: "Backend developer",
+      title: "Fullstack developer",
     },
   });
 
@@ -30,7 +30,16 @@ async function main() {
     update: {},
     create: {
       id: 3,
-      title: "UI/UX designer",
+      title: "Backend developer",
+    },
+  });
+  
+  await prisma.role.upsert({
+    where: { id: 4 },
+    update: {},
+    create: {
+      id: 4,
+      title: "Frontend developer",
     },
   });
 
@@ -57,11 +66,6 @@ async function main() {
               connect: { id: 2 },
             },
           },
-          {
-            role: {
-              connect: { id: 3 },
-            },
-          },
         ],
       },
     },
@@ -77,7 +81,7 @@ async function main() {
       stack: "HTML, CSS, JavaScript, SQLite, Docker",
       url: "https://shatynskyj.in.us",
       gitHubUrl: "https://github.com/shatynska/shatynskyj.in.ua",
-      image: "/projects/psy.svg",
+      image: "/projects/blacksmith.svg",
       roles: {
         create: [
           {
@@ -88,11 +92,6 @@ async function main() {
           {
             role: {
               connect: { id: 2 },
-            },
-          },
-          {
-            role: {
-              connect: { id: 3 },
             },
           },
         ],
@@ -110,7 +109,7 @@ async function main() {
       stack: "PHP, Laravel, TypeScript, React, Inertia, Tailwind.",
       url: "https://my.dro.psypra.com",
       gitHubUrl: "https://github.com/shatynska/my.dro.psypra.com",
-      image: "/projects/dro.svg",
+      image: "/projects/window.svg",
       roles: {
         create: [
           {
@@ -121,11 +120,6 @@ async function main() {
           {
             role: {
               connect: { id: 2 },
-            },
-          },
-          {
-            role: {
-              connect: { id: 3 },
             },
           },
         ],
@@ -143,7 +137,7 @@ async function main() {
       stack: "PHP, Laravel, TypeScript, React, Next.js, Tailwind.",
       url: "https://shatynska.in.ua",
       gitHubUrl: "https://github.com/shatynska/shatynska.in.ua",
-      image: "/projects/psy.svg",
+      image: "/projects/pigeons.svg",
       roles: {
         create: [
           {
@@ -156,9 +150,60 @@ async function main() {
               connect: { id: 2 },
             },
           },
+        ],
+      },
+    },
+  });
+
+  await prisma.project.upsert({
+    where: { id: 5 },
+    update: {},
+    create: {
+      id: 5,
+      title: "Private psychology practice",
+      type: "Web application",
+      stack: "PHP, Laravel, TypeScript, React, Next.js, Tailwind.",
+      url: "https://shatynska.in.ua",
+      gitHubUrl: "https://github.com/shatynska/shatynska.in.ua",
+      image: "/projects/pigeons.svg",
+      roles: {
+        create: [
           {
             role: {
-              connect: { id: 3 },
+              connect: { id: 1 },
+            },
+          },
+          {
+            role: {
+              connect: { id: 2 },
+            },
+          },
+        ],
+      },
+    },
+  });
+
+  await prisma.project.upsert({
+    where: { id: 6 },
+    update: {},
+    create: {
+      id: 6,
+      title: "Private psychology practice",
+      type: "Web application",
+      stack: "PHP, Laravel, TypeScript, React, Next.js, Tailwind.",
+      url: "https://shatynska.in.ua",
+      gitHubUrl: "https://github.com/shatynska/shatynska.in.ua",
+      image: "/projects/window.svg",
+      roles: {
+        create: [
+          {
+            role: {
+              connect: { id: 1 },
+            },
+          },
+          {
+            role: {
+              connect: { id: 2 },
             },
           },
         ],
