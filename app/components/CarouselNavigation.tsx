@@ -6,7 +6,7 @@ export default function CarouselNavigation({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="flex md:h-24 flex-col md:flex-row">
+    <section className="flex flex-col md:h-24 md:flex-row">
       <Cell className="hidden border-l-2 bg-primary-50 md:block"></Cell>
       <Cell className="h-24 bg-primary-700 p-10 text-primary-100">
         {children}

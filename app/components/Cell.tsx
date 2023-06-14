@@ -7,7 +7,7 @@ export default function Cell({
 }) {
   return (
     <div
-      className={`relative min-h-16 flex w-screen min-w-full max-w-112 flex-col justify-center border-primary-200 md:w-96 md:min-w-96 md:max-w-96 ${className}`}
+      className={`relative flex min-h-16  w-screen min-w-full max-w-112 flex-col justify-center border-primary-200 md:w-96 md:min-w-96 md:max-w-96 ${className}`}
     >
       {children}
     </div>

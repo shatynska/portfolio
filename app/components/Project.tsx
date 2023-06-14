@@ -17,7 +17,7 @@ export default async function Project({ projectId }: { projectId?: number }) {
           role: true,
         },
         orderBy: {
-          id: 'desc',
+          id: "desc",
         },
       },
     },
@@ -26,18 +26,22 @@ export default async function Project({ projectId }: { projectId?: number }) {
   return (
     <Cell
       key={project?.id}
-      className="keen-slider__slide flex h-144 text-sm divide-y-2 px-0"
+      className="keen-slider__slide flex h-144 divide-y-2 px-0 text-sm"
     >
-      <Image
-        src={project?.image || "/default.jpg"}
-        alt={project?.title + "picture"}
-        width="384"
-        height="192"
-        className="h-44 w-96 overflow-hidden object-none"
-      />
-      <section className="flex flex-col h-72 leading-6 p-10 gap-4">
+      <section className="flex h-48 w-full justify-center overflow-hidden pb-8 pt-16">
+        <Image
+          src={project?.image || "/default.jpg"}
+          alt={project?.title + "picture"}
+          width="384"
+          height="192"
+          className="object-contain"
+        />
+      </section>
+      <section className="flex h-72 w-full flex-col gap-4 p-10 leading-6 ">
         <div className="h-8">{project?.type}</div>
-        <h3 className="h-16 flex items-center overflow-hidden">{project?.title}</h3>
+        <h3 className="flex h-16 items-center overflow-hidden">
+          {project?.title}
+        </h3>
         <div className="h-8 truncate">
           Roles:&nbsp;
           {project?.roles.map((role) => (
@@ -48,21 +52,18 @@ export default async function Project({ projectId }: { projectId?: number }) {
         </div>
         <div className="h-16 overflow-hidden">Stack: {project?.stack}</div>
       </section>
-      <section className="justify-center items-center gap-8 h-24 overflow-hidden flex [&>*]:fill-inherit">
+      <section className="flex h-24 items-center  justify-center gap-8 overflow-hidden [&>*]:fill-inherit">
+        <Link href={project?.gitHubUrl || ""} className="[&>*]:fill-inherit">
+          <MoreIcon />
+        </Link>
 
-      <Link href={project?.gitHubUrl || ''} className="[&>*]:fill-inherit"  > 
-        <MoreIcon/>
-      </Link>
+        <Link href={project?.gitHubUrl || ""} className="[&>*]:fill-inherit">
+          <GithubIcon />
+        </Link>
 
-      <Link href={project?.gitHubUrl || ''} className="[&>*]:fill-inherit"  > 
-        <GithubIcon/>
-      </Link>
-
-      <Link href={project?.gitHubUrl || ''} className="[&>*]:fill-inherit"  > 
-        <WwwIcon/>
-      </Link>
-
-
+        <Link href={project?.gitHubUrl || ""} className="[&>*]:fill-inherit">
+          <WwwIcon />
+        </Link>
       </section>
     </Cell>
   );
