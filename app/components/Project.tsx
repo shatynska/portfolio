@@ -1,7 +1,10 @@
-import Image from "next/image";
-import Cell from "./Cell";
 import { prisma } from "@/lib/prisma";
+import Image from "next/image";
 import Link from "next/link";
+import Cell from "./Cell";
+import MoreIcon from "./icons/MoreIcon";
+import GithubIcon from "./icons/GithubIcon";
+import WwwIcon from "./icons/WwwIcon";
 
 export default async function Project({ projectId }: { projectId?: number }) {
   const project = await prisma.project.findUnique({
@@ -45,15 +48,21 @@ export default async function Project({ projectId }: { projectId?: number }) {
         </div>
         <div className="h-16 overflow-hidden">Stack: {project?.stack}</div>
       </section>
-      <section className="justify-center inline-block items-center gap-8 h-24 overflow-hidden flex">
-      <Link href={project?.gitHubUrl || ''}  >      
-        <Image
-            src="/icons/github.svg"
-            height="32"
-            width="32"
-            alt="github icon"
-          />
+      <section className="justify-center items-center gap-8 h-24 overflow-hidden flex [&>*]:fill-inherit">
+
+      <Link href={project?.gitHubUrl || ''} className="[&>*]:fill-inherit"  > 
+        <MoreIcon/>
       </Link>
+
+      <Link href={project?.gitHubUrl || ''} className="[&>*]:fill-inherit"  > 
+        <GithubIcon/>
+      </Link>
+
+      <Link href={project?.gitHubUrl || ''} className="[&>*]:fill-inherit"  > 
+        <WwwIcon/>
+      </Link>
+
+
       </section>
     </Cell>
   );
