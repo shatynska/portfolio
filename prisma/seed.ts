@@ -6,7 +6,7 @@ const prisma = new PrismaClient({ log: ["query"] });
 async function main() {
   await prisma.project.deleteMany();
   await prisma.role.deleteMany();
-  
+
   await prisma.role.upsert({
     where: { id: 1 },
     update: {},
@@ -33,7 +33,7 @@ async function main() {
       title: "Backend developer",
     },
   });
-  
+
   await prisma.role.upsert({
     where: { id: 4 },
     update: {},
@@ -79,7 +79,7 @@ async function main() {
       title: 'Website for blacksmith "Steel Sky"',
       type: "Business website",
       stack: "HTML, CSS, JavaScript, SQLite, Docker",
-      url: "https://shatynskyj.in.us",
+      url: "https://shatynskyj.in.ua",
       gitHubUrl: "https://github.com/shatynska/shatynskyj.in.ua",
       image: "/projects/blacksmith.svg",
       roles: {

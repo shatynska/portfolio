@@ -4,7 +4,7 @@ import Cell from "../components/Cell";
 export default function AboutSection() {
   return (
     <section className="flex flex-col md:flex-row">
-      <Cell className="border-x-2 bg-primary-50 p-10 md:h-144">
+      <Cell className="border-x-2 bg-primary-50 px-10 py-16 md:h-144">
         <p>
           I'm a full-stack web developer from Ukraine. I like to create designs
           and work on front-end tasks.
@@ -18,7 +18,7 @@ export default function AboutSection() {
           Next.js.
         </p>
       </Cell>
-      <Cell className="bg-primary-900 p-10 text-primary-100 md:h-144">
+      <Cell className="bg-primary-900 px-10 py-16 justify-start text-primary-100 md:h-144">
         <h2>Skills</h2>
         <ul>
           <li>PHP, Laravel, Inertia</li>
