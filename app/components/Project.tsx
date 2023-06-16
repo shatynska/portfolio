@@ -48,7 +48,10 @@ export default async function Project({ projectId }: { projectId?: number }) {
         <div className="h-8 truncate">
           Roles:&nbsp;
           {project?.roles.map((role) => (
-            <span key={role.role.id} className="first:after:content-[',\a0']">
+            <span
+              key={role.role.id}
+              className="[&:not(:last-child)]:after:content-[',\a0']"
+            >
               {role.role.title}
             </span>
           ))}
