@@ -99,18 +99,15 @@ function Arrow(props: {
         <path
           d="M14 28L2 16L14 4"
           stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          stroke-width="3"
+  
         />
       )}
       {!props.left && (
         <path
           d="M18 28L30 16L18 4"
           stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          stroke-width="3"
         />
       )}
     </svg>
