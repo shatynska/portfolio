@@ -3,7 +3,7 @@ import MainNavigation from "./MainNavigation";
 
 export default function Hamburger() {
   return (
-    <button className="group fixed right-2 top-2 mix-blend-difference lg:hidden">
+    <button className="group fixed right-2 top-2 mix-blend-difference hover:opacity-80 lg:hidden">
       <div className="relative flex h-16 w-16 transform items-center justify-center overflow-hidden transition-all duration-200">
         <div className="flex h-6 w-7 origin-center transform flex-col justify-around overflow-hidden transition-all duration-300">
           <div className="h-[3px] w-7 origin-left transform bg-primary-400 transition-all duration-300 group-focus:translate-x-10"></div>

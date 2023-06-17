@@ -6,7 +6,7 @@ import Hamburger from "./components/Hamburger";
 
 export default function Home() {
   return (
-    <main className="border border-primary-200">
+    <main className="border border-primary-200 [&_a:hover]:opacity-80">
       <Header />
       <AboutSection />
       <Projects />

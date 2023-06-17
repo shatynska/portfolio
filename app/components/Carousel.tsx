@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import Cell from "./Cell";
 import CarouselNavigation from "../components/CarouselNavigation";
 
 export default function Carousel({
@@ -51,7 +50,9 @@ export default function Carousel({
             />
             <div className="flex items-center justify-between">
               {[
-              ...Array(instanceRef.current.track.details.slides.length).keys(),
+                ...Array(
+                  instanceRef.current.track.details.slides.length
+                ).keys(),
               ].map((idx) => {
                 return (
                   <button
@@ -59,7 +60,12 @@ export default function Carousel({
                     onClick={() => {
                       instanceRef.current?.moveToIdx(idx);
                     }}
-                  className={" w-2 h-2 m-2 rounded " + (currentSlide === idx ? " bg-primary-50" : " bg-primary-500")}
+                    className={
+                      " m-2 h-2 w-2 rounded hover:opacity-80 " +
+                      (currentSlide === idx
+                        ? " bg-primary-400"
+                        : " bg-primary-600")
+                    }
                   ></button>
                 );
               })}
@@ -86,7 +92,7 @@ function Arrow(props: {
   return (
     <svg
       onClick={props.onClick}
-      className={`cursor-pointer ${
+      className={`cursor-pointer hover:opacity-80 ${
         props.left ? "arrow--left" : "arrow--right"
       } ${disabeld}`}
       xmlns="http://www.w3.org/2000/svg"
@@ -96,19 +102,10 @@ function Arrow(props: {
       fill="none"
     >
       {props.left && (
-        <path
-          d="M14 28L2 16L14 4"
-          stroke="white"
-          stroke-width="3"
-  
-        />
+        <path d="M14 28L2 16L14 4" stroke="white" stroke-width="3" />
       )}
       {!props.left && (
-        <path
-          d="M18 28L30 16L18 4"
-          stroke="white"
-          stroke-width="3"
-        />
+        <path d="M18 28L30 16L18 4" stroke="white" stroke-width="3" />
       )}
     </svg>
   );
