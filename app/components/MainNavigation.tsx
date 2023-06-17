@@ -5,7 +5,7 @@ import Cell from "./Cell";
 export default function MainNavigation({ className }: { className?: string }) {
   return (
     <Cell
-      className={`h-144 divide-y-2 divide-primary-300 border-r-2 bg-primary-50 ${className}`}
+      className={`h-144 divide-y-2 divide-primary-300 bg-primary-50 ${className}`}
     >
       <nav className="flex h-24 items-center justify-center gap-8 font-semibold">
         <Link href="">UA</Link>

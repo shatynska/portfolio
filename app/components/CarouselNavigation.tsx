@@ -7,7 +7,7 @@ export default function CarouselNavigation({
 }) {
   return (
     <section className="flex flex-col md:h-24 md:flex-row">
-      <Cell className="hidden border-l-2 bg-primary-50 md:block"></Cell>
+      <Cell className="hidden bg-primary-50 md:block"></Cell>
       <Cell className="h-24 bg-primary-700 p-10 text-primary-100">
         {children}
       </Cell>

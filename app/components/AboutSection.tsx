@@ -4,7 +4,7 @@ import Cell from "../components/Cell";
 export default function AboutSection() {
   return (
     <section className="flex flex-col md:flex-row">
-      <Cell className="border-x-2 bg-primary-50 px-10 py-16 md:h-144 [&>p:not(:first-child)]:mt-4">
+      <Cell className="bg-primary-50 px-10 py-16 md:h-144 [&>p:not(:first-child)]:mt-4">
         <p>
           I'm a full-stack web developer from Ukraine. I like to create designs
           and work on front-end tasks.

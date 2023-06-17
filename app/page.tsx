@@ -6,7 +6,7 @@ import Hamburger from "./components/Hamburger";
 
 export default function Home() {
   return (
-    <main>
+    <main className="border border-primary-200">
       <Header />
       <AboutSection />
       <Projects />
