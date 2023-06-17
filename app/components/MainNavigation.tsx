@@ -13,7 +13,7 @@ export default function MainNavigation({ className }: { className?: string }) {
         <Link href="">PL</Link>
       </nav>
       <div className="flex h-24 items-center justify-center gap-8  ">
-        <Link href="tel:+380978976847">
+        <Link href="tel:+380978976847" target="_blank">
           <Image
             src="/icons/phone.svg"
             height="32"
@@ -21,7 +21,7 @@ export default function MainNavigation({ className }: { className?: string }) {
             alt="phone icon"
           />
         </Link>
-        <Link href="mailto:helenshatynska@gmail.com">
+        <Link href="mailto:helenshatynska@gmail.com" target="_blank">
           <Image
             src="/icons/email.svg"
             height="32"
@@ -29,7 +29,7 @@ export default function MainNavigation({ className }: { className?: string }) {
             alt="email icon"
           />
         </Link>
-        <Link href="skype:shatynskaa?userinfo">
+        <Link href="skype:shatynskaa?userinfo" target="_blank">
           <Image
             src="/icons/skype.svg"
             height="32"
@@ -37,7 +37,7 @@ export default function MainNavigation({ className }: { className?: string }) {
             alt="skype icon"
           />
         </Link>
-        <Link href="https://goo.gl/maps/2d9j9b1gmRQEJgwT6">
+        <Link href="https://goo.gl/maps/2d9j9b1gmRQEJgwT6" target="_blank">
           <Image
             src="/icons/address.svg"
             height="32"
@@ -58,7 +58,7 @@ export default function MainNavigation({ className }: { className?: string }) {
         </h2>
       </nav>
       <div className="flex h-24 items-center justify-center gap-8  ">
-        <Link href="https://www.linkedin.com/in/shatynska/">
+        <Link href="https://www.linkedin.com/in/shatynska/" target="_blank">
           <Image
             src="/icons/linkedin.svg"
             height="32"
@@ -66,7 +66,7 @@ export default function MainNavigation({ className }: { className?: string }) {
             alt="phone icon"
           />
         </Link>
-        <Link href="https://github.com/shatynska">
+        <Link href="https://github.com/shatynska" target="_blank">
           <Image
             src="/icons/github.svg"
             height="32"

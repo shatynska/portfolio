@@ -61,13 +61,21 @@ export default async function Project({ projectId }: { projectId?: number }) {
 
       <section className="flex h-24 items-center  justify-center gap-8 overflow-hidden [&>*]:fill-inherit">
         {project?.gitHubUrl && (
-          <Link href={project?.gitHubUrl || ""} className="[&>*]:fill-inherit">
+          <Link
+            href={project?.gitHubUrl || ""}
+            target="_blank"
+            className="[&>*]:fill-inherit"
+          >
             <GithubIcon />
           </Link>
         )}
 
         {project?.url && (
-          <Link href={project.url} className="[&>*]:fill-inherit">
+          <Link
+            href={project.url}
+            target="_blank"
+            className="[&>*]:fill-inherit"
+          >
             <WwwIcon />
           </Link>
         )}
