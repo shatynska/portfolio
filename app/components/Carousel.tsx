@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import CarouselNavigationContainer from "./CarouselNavigationContainer";
@@ -103,8 +104,12 @@ export default function Carousel({
           <div className="flex flex-row items-center justify-between">
             Project &nbsp;&nbsp; {currentSlideNumber} /{" "}
             {instanceRef.current?.slides.length}
-            <Arrow
-              left
+            <Image
+              src="icons/previous.svg"
+              width={32}
+              height={32}
+              alt="previous slider icon"
+              className="cursor-pointer"
               onClick={(e: any) => {
                 e.stopPropagation();
                 instanceRef.current?.prev();
@@ -115,9 +120,13 @@ export default function Carousel({
                   )
                 );
               }}
-              disabled
             />
-            <Arrow
+            <Image
+              src="icons/next.svg"
+              width={32}
+              height={32}
+              alt="next slider icon"
+              className="cursor-pointer"
               onClick={(e: any) => {
                 e.stopPropagation();
                 instanceRef.current?.next();
@@ -128,7 +137,6 @@ export default function Carousel({
                   )
                 );
               }}
-              disabled
             />
             <Arrow
               onClick={(e: any) => {
