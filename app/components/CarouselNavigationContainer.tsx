@@ -1,6 +1,6 @@
-import Cell from "../components/Cell";
+import Cell from "./Cell";
 
-export default function CarouselNavigation({
+export default function CarouselNavigationContainer({
   children,
 }: {
   children?: React.ReactNode;
