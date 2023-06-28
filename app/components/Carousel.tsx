@@ -121,9 +121,11 @@ export default function Carousel({
               onClick={(e: any) => {
                 e.stopPropagation();
                 instanceRef.current?.next();
-                checkCurrentSlideNumber(
-                  currentSlideNumber + 1,
-                  Number(instanceRef.current?.slides.length)
+                setCurrentSlideNumber(
+                  checkCurrentSlideNumber(
+                    currentSlideNumber + 1,
+                    Number(instanceRef.current?.slides.length)
+                  )
                 );
               }}
               disabled
