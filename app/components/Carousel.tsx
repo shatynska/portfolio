@@ -90,28 +90,6 @@ export default function Carousel({
               }
               disabled
             />
-            <div className="flex items-center justify-between">
-              {[
-                ...Array(
-                  instanceRef.current.track.details.slides.length
-                ).keys(),
-              ].map((idx) => {
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      instanceRef.current?.moveToIdx(idx);
-                    }}
-                    className={
-                      " m-2 h-2 w-2 rounded hover:opacity-80 " +
-                      (currentSlide === idx
-                        ? " bg-primary-400"
-                        : " bg-primary-600")
-                    }
-                  ></button>
-                );
-              })}
-            </div>
             <Arrow
               onClick={(e: any) => {
                 e.stopPropagation();
