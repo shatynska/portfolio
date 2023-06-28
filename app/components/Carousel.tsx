@@ -14,6 +14,7 @@ export default function Carousel({
 }) {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
+  const [currentSlideNumber, setCurrentSlideNumber] = useState(1);
   const [paused, setPaused] = useState(false);
   const pausedRef = useRef(paused);
 
@@ -83,18 +84,24 @@ export default function Carousel({
       {loaded && instanceRef.current && (
         <CarouselNavigationContainer>
           <div className="flex flex-row items-center justify-between">
+            Project &nbsp;&nbsp; {currentSlideNumber} /{" "}
+            {instanceRef.current?.slides.length}
             <Arrow
               left
-              onClick={(e: any) =>
-                e.stopPropagation() || instanceRef.current?.prev()
-              }
+              onClick={(e: any) => {
+                e.stopPropagation();
+                instanceRef.current?.prev();
+                setCurrentSlideNumber(
+                  Number(instanceRef.current?.slides.length)
+                );
+              }}
               disabled
             />
             <Arrow
               onClick={(e: any) => {
                 e.stopPropagation();
-                setPaused(false);
                 instanceRef.current?.next();
+                setCurrentSlideNumber(currentSlideNumber + 1);
               }}
               disabled
             />
@@ -102,6 +109,14 @@ export default function Carousel({
               onClick={(e: any) => {
                 e.stopPropagation();
                 setPaused(true);
+              }}
+              disabled
+            />
+            <Arrow
+              onClick={(e: any) => {
+                e.stopPropagation();
+                setPaused(false);
+                instanceRef.current?.next();
               }}
               disabled
             />
