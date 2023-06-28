@@ -18,6 +18,17 @@ export default function Carousel({
   const [paused, setPaused] = useState(false);
   const pausedRef = useRef(paused);
 
+  function checkCurrentSlideNumber(
+    currentSlideNumber: number,
+    totalNumberOfSlides: number
+  ): number {
+    return currentSlideNumber <= totalNumberOfSlides
+      ? currentSlideNumber >= 1
+        ? currentSlideNumber
+        : totalNumberOfSlides - currentSlideNumber
+      : currentSlideNumber - totalNumberOfSlides;
+  }
+
   useEffect(() => {
     pausedRef.current = paused;
   }, [paused, pausedRef]);
@@ -51,6 +62,12 @@ export default function Carousel({
           timeout = setTimeout(() => {
             if (pausedRef.current) return;
             slider.next();
+            setCurrentSlideNumber(
+              checkCurrentSlideNumber(
+                slider?.track.details.rel + 1,
+                slider.track.details.slides.length
+              )
+            );
           }, 3000);
         }
         slider.on("created", () => {
@@ -92,7 +109,10 @@ export default function Carousel({
                 e.stopPropagation();
                 instanceRef.current?.prev();
                 setCurrentSlideNumber(
-                  Number(instanceRef.current?.slides.length)
+                  checkCurrentSlideNumber(
+                    currentSlideNumber - 1,
+                    Number(instanceRef.current?.slides.length)
+                  )
                 );
               }}
               disabled
@@ -101,7 +121,10 @@ export default function Carousel({
               onClick={(e: any) => {
                 e.stopPropagation();
                 instanceRef.current?.next();
-                setCurrentSlideNumber(currentSlideNumber + 1);
+                checkCurrentSlideNumber(
+                  currentSlideNumber + 1,
+                  Number(instanceRef.current?.slides.length)
+                );
               }}
               disabled
             />
