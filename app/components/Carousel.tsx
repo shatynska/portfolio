@@ -1,8 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import CarouselNavigation from "../components/CarouselNavigation";
+import CarouselNavigationContainer from "./CarouselNavigationContainer";
 import Arrow from "./icons/Arrow";
 
 export default function Carousel({
@@ -14,13 +14,20 @@ export default function Carousel({
 }) {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const pausedRef = useRef(paused);
+
+  useEffect(() => {
+    pausedRef.current = paused;
+  }, [paused, pausedRef]);
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
-      initial: 0,
+      initial: 1,
       loop: true,
       slides: {
         perView: "auto",
+        origin: "center",
       },
       slideChanged(slider) {
         setCurrentSlide(slider.track.details.rel);
@@ -32,14 +39,16 @@ export default function Carousel({
     [
       (slider) => {
         let timeout: ReturnType<typeof setTimeout>;
-        let mouseOver = true;
+        let mouseOver = false;
         function clearNextTimeout() {
           clearTimeout(timeout);
         }
         function nextTimeout() {
           clearTimeout(timeout);
           if (mouseOver) return;
+          if (pausedRef.current) return;
           timeout = setTimeout(() => {
+            if (pausedRef.current) return;
             slider.next();
           }, 3000);
         }
@@ -72,7 +81,7 @@ export default function Carousel({
         </div>
       </div>
       {loaded && instanceRef.current && (
-        <CarouselNavigation>
+        <CarouselNavigationContainer>
           <div className="flex flex-row items-center justify-between">
             <Arrow
               left
@@ -104,13 +113,22 @@ export default function Carousel({
               })}
             </div>
             <Arrow
-              onClick={(e: any) =>
-                e.stopPropagation() || instanceRef.current?.next()
-              }
+              onClick={(e: any) => {
+                e.stopPropagation();
+                setPaused(false);
+                instanceRef.current?.next();
+              }}
+              disabled
+            />
+            <Arrow
+              onClick={(e: any) => {
+                e.stopPropagation();
+                setPaused(true);
+              }}
               disabled
             />
           </div>
-        </CarouselNavigation>
+        </CarouselNavigationContainer>
       )}
     </div>
   );
