@@ -4,7 +4,6 @@ import Image from "next/image";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import CarouselNavigationContainer from "./CarouselNavigationContainer";
-import Arrow from "./icons/Arrow";
 
 export default function Carousel({
   className,
@@ -122,6 +121,29 @@ export default function Carousel({
               }}
             />
             <Image
+              src="icons/pause.svg"
+              width={32}
+              height={32}
+              alt="paused auto switch icon"
+              className="cursor-pointer"
+              onClick={(e: any) => {
+                e.stopPropagation();
+                setPaused(true);
+              }}
+            />
+            <Image
+              src="icons/play.svg"
+              width={32}
+              height={32}
+              alt="start auto switch icon"
+              className="cursor-pointer"
+              onClick={(e: any) => {
+                e.stopPropagation();
+                setPaused(false);
+                instanceRef.current?.next();
+              }}
+            />
+            <Image
               src="icons/next.svg"
               width={32}
               height={32}
@@ -137,21 +159,6 @@ export default function Carousel({
                   )
                 );
               }}
-            />
-            <Arrow
-              onClick={(e: any) => {
-                e.stopPropagation();
-                setPaused(true);
-              }}
-              disabled
-            />
-            <Arrow
-              onClick={(e: any) => {
-                e.stopPropagation();
-                setPaused(false);
-                instanceRef.current?.next();
-              }}
-              disabled
             />
           </div>
         </CarouselNavigationContainer>
