@@ -39,7 +39,18 @@ export default function Carousel({
       loop: true,
       slides: {
         perView: "auto",
-        origin: "center",
+      },
+      breakpoints: {
+        "(min-width: 768px)": {
+          initial: 0,
+        },
+        "(min-width: 1152px)": {
+          initial: 1,
+          slides: {
+            perView: "auto",
+            origin: "center",
+          },
+        },
       },
       slideChanged(slider) {
         setCurrentSlide(slider.track.details.rel);
