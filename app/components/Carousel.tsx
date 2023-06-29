@@ -63,9 +63,11 @@ export default function Carousel({
       (slider) => {
         let timeout: ReturnType<typeof setTimeout>;
         let mouseOver = false;
+
         function clearNextTimeout() {
           clearTimeout(timeout);
         }
+
         function nextTimeout() {
           clearTimeout(timeout);
           if (mouseOver) return;
@@ -73,14 +75,9 @@ export default function Carousel({
           timeout = setTimeout(() => {
             if (pausedRef.current) return;
             slider.next();
-            setCurrentSlideNumber(
-              checkCurrentSlideNumber(
-                slider?.track.details.rel + 1,
-                slider.track.details.slides.length
-              )
-            );
           }, 3000);
         }
+
         slider.on("created", () => {
           slider.container.addEventListener("mouseover", () => {
             mouseOver = true;
@@ -93,7 +90,15 @@ export default function Carousel({
           nextTimeout();
         });
         slider.on("dragStarted", clearNextTimeout);
-        slider.on("animationEnded", nextTimeout);
+        slider.on("animationEnded", () => {
+          setCurrentSlideNumber(
+            checkCurrentSlideNumber(
+              slider?.track.details.rel + 1,
+              slider.track.details.slides.length
+            )
+          );
+          nextTimeout();
+        });
         slider.on("updated", nextTimeout);
       },
     ]
