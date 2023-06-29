@@ -100,60 +100,66 @@ export default function Carousel({
       </div>
       {loaded && instanceRef.current && (
         <CarouselNavigationContainer>
-          <div className="flex flex-row items-center justify-between">
-            Project &nbsp;&nbsp; {currentSlideNumber} /{" "}
-            {instanceRef.current?.slides.length}
-            <Image
-              src="icons/previous.svg"
-              width={32}
-              height={32}
-              alt="previous icon"
-              title="previous project"
-              className="cursor-pointer"
-              onClick={(e: any) => {
-                e.stopPropagation();
-                instanceRef.current?.prev();
-                setCurrentSlideNumber(
-                  checkCurrentSlideNumber(
-                    currentSlideNumber - 1,
-                    Number(instanceRef.current?.slides.length)
-                  )
-                );
-              }}
-            />
-            <div className="flex w-12 justify-center">
-              <button
-                className={`h-6 w-5 transform cursor-pointer border-r-0 border-transparent border-l-primary-50 transition-all duration-200 ${
-                  paused
-                    ? " ml-3 border-y-[12px] border-l-[18px] border-solid "
-                    : " border-y-0 border-l-[20px] border-double"
-                }`}
+          <div className="flex items-center justify-between">
+            <div className=" flex w-28 items-center justify-between">
+              <span>Project</span>
+              <span>
+                {currentSlideNumber} / {instanceRef.current?.slides.length}
+              </span>
+            </div>
+            <div className="flex w-36 items-center justify-between">
+              <Image
+                src="icons/previous.svg"
+                width={32}
+                height={32}
+                alt="previous icon"
+                title="previous project"
+                className="cursor-pointer"
                 onClick={(e: any) => {
                   e.stopPropagation();
-                  setPaused(!paused);
-                  if (paused) instanceRef.current?.next();
+                  instanceRef.current?.prev();
+                  setCurrentSlideNumber(
+                    checkCurrentSlideNumber(
+                      currentSlideNumber - 1,
+                      Number(instanceRef.current?.slides.length)
+                    )
+                  );
                 }}
-                title={`${paused ? "start" : "pause"} auto switch`}
-              ></button>
+              />
+              <div className="flex w-12 justify-center">
+                <button
+                  className={`h-6 w-5 transform cursor-pointer border-r-0 border-transparent border-l-primary-50 transition-all duration-200 ${
+                    paused
+                      ? " ml-3 border-y-[12px] border-l-[18px] border-solid "
+                      : " border-y-0 border-l-[20px] border-double"
+                  }`}
+                  onClick={(e: any) => {
+                    e.stopPropagation();
+                    setPaused(!paused);
+                    if (paused) instanceRef.current?.next();
+                  }}
+                  title={`${paused ? "start" : "pause"} auto switch`}
+                ></button>
+              </div>
+              <Image
+                src="icons/next.svg"
+                width={32}
+                height={32}
+                alt="next icon"
+                title="next project"
+                className="cursor-pointer"
+                onClick={(e: any) => {
+                  e.stopPropagation();
+                  instanceRef.current?.next();
+                  setCurrentSlideNumber(
+                    checkCurrentSlideNumber(
+                      currentSlideNumber + 1,
+                      Number(instanceRef.current?.slides.length)
+                    )
+                  );
+                }}
+              />
             </div>
-            <Image
-              src="icons/next.svg"
-              width={32}
-              height={32}
-              alt="next icon"
-              title="next project"
-              className="cursor-pointer"
-              onClick={(e: any) => {
-                e.stopPropagation();
-                instanceRef.current?.next();
-                setCurrentSlideNumber(
-                  checkCurrentSlideNumber(
-                    currentSlideNumber + 1,
-                    Number(instanceRef.current?.slides.length)
-                  )
-                );
-              }}
-            />
           </div>
         </CarouselNavigationContainer>
       )}
