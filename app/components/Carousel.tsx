@@ -107,7 +107,8 @@ export default function Carousel({
               src="icons/previous.svg"
               width={32}
               height={32}
-              alt="previous slider icon"
+              alt="previous icon"
+              title="previous project"
               className="cursor-pointer"
               onClick={(e: any) => {
                 e.stopPropagation();
@@ -120,34 +121,27 @@ export default function Carousel({
                 );
               }}
             />
-            <Image
-              src="icons/pause.svg"
-              width={32}
-              height={32}
-              alt="paused auto switch icon"
-              className="cursor-pointer"
-              onClick={(e: any) => {
-                e.stopPropagation();
-                setPaused(true);
-              }}
-            />
-            <Image
-              src="icons/play.svg"
-              width={32}
-              height={32}
-              alt="start auto switch icon"
-              className="cursor-pointer"
-              onClick={(e: any) => {
-                e.stopPropagation();
-                setPaused(false);
-                instanceRef.current?.next();
-              }}
-            />
+            <div className="flex w-12 justify-center">
+              <button
+                className={`h-6 w-5 transform cursor-pointer border-r-0 border-transparent border-l-primary-50 transition-all duration-200 ${
+                  paused
+                    ? " ml-3 border-y-[12px] border-l-[18px] border-solid "
+                    : " border-y-0 border-l-[20px] border-double"
+                }`}
+                onClick={(e: any) => {
+                  e.stopPropagation();
+                  setPaused(!paused);
+                  if (paused) instanceRef.current?.next();
+                }}
+                title={`${paused ? "start" : "pause"} auto switch`}
+              ></button>
+            </div>
             <Image
               src="icons/next.svg"
               width={32}
               height={32}
-              alt="next slider icon"
+              alt="next icon"
+              title="next project"
               className="cursor-pointer"
               onClick={(e: any) => {
                 e.stopPropagation();
