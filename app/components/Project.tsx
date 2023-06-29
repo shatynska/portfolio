@@ -65,6 +65,7 @@ export default async function Project({ projectId }: { projectId?: number }) {
             href={project?.gitHubUrl || ""}
             target="_blank"
             className="[&>*]:fill-inherit"
+            title="GitHub repository"
           >
             <GithubIcon />
           </Link>
@@ -75,6 +76,7 @@ export default async function Project({ projectId }: { projectId?: number }) {
             href={project.url}
             target="_blank"
             className="[&>*]:fill-inherit"
+            title="URL address"
           >
             <WwwIcon />
           </Link>

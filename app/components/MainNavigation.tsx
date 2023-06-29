@@ -8,70 +8,99 @@ export default function MainNavigation({ className }: { className?: string }) {
       className={`h-144 divide-y-2 divide-primary-300 bg-primary-50 ${className}`}
     >
       <nav className="flex h-24 items-center justify-center gap-8 font-semibold">
-        <Link href="">UA</Link>
-        <Link href="">EN</Link>
-        <Link href="">PL</Link>
+        <Link href="" title="Українська">
+          UA
+        </Link>
+        <Link href="" title="English">
+          EN
+        </Link>
       </nav>
       <div className="flex h-24 items-center justify-center gap-8  ">
-        <Link href="tel:+380978976847" target="_blank">
+        <Link href="tel:+380978976847" target="_blank" title="Phone number">
           <Image
             src="/icons/phone.svg"
             height="32"
             width="32"
-            alt="phone icon"
+            alt="Phone icon"
           />
         </Link>
-        <Link href="mailto:helenshatynska@gmail.com" target="_blank">
+        <Link
+          href="mailto:helenshatynska@gmail.com"
+          target="_blank"
+          title="E-mail"
+        >
           <Image
             src="/icons/email.svg"
             height="32"
             width="32"
-            alt="email icon"
+            alt="E-mail icon"
           />
         </Link>
-        <Link href="skype:shatynskaa?userinfo" target="_blank">
+        <Link
+          href="skype:shatynskaa?userinfo"
+          target="_blank"
+          title="Skype profile"
+        >
           <Image
             src="/icons/skype.svg"
             height="32"
             width="32"
-            alt="skype icon"
+            alt="Skype icon"
           />
         </Link>
-        <Link href="https://goo.gl/maps/2d9j9b1gmRQEJgwT6" target="_blank">
+        <Link
+          href="https://goo.gl/maps/2d9j9b1gmRQEJgwT6"
+          target="_blank"
+          title="Location on Google Maps"
+        >
           <Image
             src="/icons/address.svg"
             height="32"
             width="32"
-            alt="address icon"
+            alt="Address icon"
           />
         </Link>
       </div>
       <nav className="flex h-72 flex-col justify-center gap-8 text-center">
         <h2>
-          <Link href="">Design</Link>
+          <Link href="" title="UI/UX design parts of projects">
+            Design
+          </Link>
         </h2>
         <h2>
-          <Link href="">Backend</Link>
+          <Link href="" title="Backend parts of projects">
+            Backend
+          </Link>
         </h2>
         <h2>
-          <Link href="">Frontend</Link>
+          <Link href="" title="Frontend parts of projects">
+            Frontend
+          </Link>
         </h2>
       </nav>
       <div className="flex h-24 items-center justify-center gap-8  ">
-        <Link href="https://www.linkedin.com/in/shatynska/" target="_blank">
+        <Link
+          href="https://www.linkedin.com/in/shatynska/"
+          target="_blank"
+          title="Linkedin profile"
+        >
           <Image
             src="/icons/linkedin.svg"
             height="32"
             width="32"
-            alt="phone icon"
+            alt="Linkedin icon"
           />
         </Link>
-        <Link href="https://github.com/shatynska" target="_blank">
+        <Link
+          href="https://github.com/shatynska"
+          target="_blank"
+          title="GitHub profile"
+        >
           <Image
             src="/icons/github.svg"
             height="32"
             width="32"
-            alt="email icon"
+            alt="GitHub icon"
           />
         </Link>
       </div>
