@@ -124,7 +124,7 @@ export default function Carousel({
                 width={32}
                 height={32}
                 alt="previous icon"
-                title="previous project"
+                title="Switch to the previous project"
                 className="cursor-pointer"
                 onClick={(e: any) => {
                   e.stopPropagation();
@@ -149,7 +149,7 @@ export default function Carousel({
                     setPaused(!paused);
                     if (paused) instanceRef.current?.next();
                   }}
-                  title={`${paused ? "start" : "pause"} auto switch`}
+                  title={`${paused ? "Start" : "Pause"} auto switch`}
                 ></button>
               </div>
               <Image
@@ -157,7 +157,7 @@ export default function Carousel({
                 width={32}
                 height={32}
                 alt="next icon"
-                title="next project"
+                title="Switch to the next project"
                 className="cursor-pointer"
                 onClick={(e: any) => {
                   e.stopPropagation();
