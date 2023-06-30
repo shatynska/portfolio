@@ -4,6 +4,10 @@ const nextConfig = {
     appDir: true,
   },
   output: "standalone",
+  i18n: {
+    locales: ["en-US", "ua"],
+    defaultLocale: "en-US",
+  },
 };
 
 module.exports = nextConfig;
