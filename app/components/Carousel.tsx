@@ -14,7 +14,7 @@ export default function Carousel({
 }) {
   const [currentSlide, setCurrentSlide] = React.useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [currentSlideNumber, setCurrentSlideNumber] = useState(1);
+  const [currentSlideNumber, setCurrentSlideNumber] = useState(2);
   const [paused, setPaused] = useState(false);
   const pausedRef = useRef(paused);
 
