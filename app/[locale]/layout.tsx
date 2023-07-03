@@ -1,3 +1,5 @@
+import { useLocale } from "next-intl";
+import { notFound } from "next/navigation";
 import "./globals.css";
 import { Manrope } from "next/font/google";
 
@@ -11,11 +13,19 @@ export const metadata = {
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { locale: any };
 }) {
+  const locale = useLocale();
+
+  // Show a 404 error if the user requests an unknown locale
+  if (params.locale !== locale) {
+    notFound();
+  }
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={manrope.className}>{children}</body>
     </html>
   );
