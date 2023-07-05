@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import Header from "../components/Header";
 import AboutSection from "../components/AboutSection";
 import Projects from "../components/Projects";
@@ -6,7 +5,6 @@ import Footer from "../components/Footer";
 import Hamburger from "../components/Hamburger";
 
 export default function Home() {
-  const t = useTranslations("Index");
   return (
     <main className="border border-primary-200 [&_a:hover]:opacity-80">
       <Header />
