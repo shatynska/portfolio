@@ -16,7 +16,7 @@ export default function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: any };
+  params: { locale: string };
 }) {
   const locale = useLocale();
 

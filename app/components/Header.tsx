@@ -1,11 +1,11 @@
-import { useTranslations } from "next-intl";
+import { getTranslator } from "next-intl/server";
 import Image from "next/image";
 import Cell from "../components/Cell";
 import MainNavigation from "../components/MainNavigation";
 import developerImage from "/public/developer.jpg";
 
-export default function Header() {
-  const t = useTranslations("Index");
+export default async function Header({ params: {locale}, } : { params: { locale: string }; }) {
+  const t = await getTranslator(locale, "Index");
 
   return (
     <header className="flex flex-col md:flex-row">
