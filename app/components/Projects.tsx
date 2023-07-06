@@ -4,11 +4,11 @@ import Carousel from "../components/Carousel";
 import Project from "../components/Project";
 
 export default async function Projects() {
-  const projects = await prisma.project.findMany({
-    select: {
-      id: true,
-    },
-  });
+  // const projects = await prisma.project.findMany({
+  //   select: {
+  //     id: true,
+  //   },
+  // });
 
   return (
     <div></div>
