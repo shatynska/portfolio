@@ -1,27 +1,20 @@
-import { prisma } from "@/lib/prisma";
 import Image from "next/image";
 import Link from "next/link";
 import Cell from "./Cell";
 import MoreIcon from "./icons/MoreIcon";
 import GithubIcon from "./icons/GithubIcon";
 import WwwIcon from "./icons/WwwIcon";
+import { db } from "@/drizzle/";
+import { project as projectSchema, role } from "@/drizzle/schema";
+import { eq } from "drizzle-orm";
 
-export default async function Project({ projectId }: { projectId?: number }) {
-  const project = await prisma.project.findUnique({
-    where: {
-      id: projectId,
-    },
-    include: {
-      roles: {
-        include: {
-          role: true,
-        },
-        orderBy: {
-          id: "desc",
-        },
-      },
-    },
-  });
+export default async function Project({ projectId }: { projectId: number }) {
+  const projects = await db
+    .select()
+    .from(projectSchema)
+    .where(eq(projectSchema.id, projectId));
+    
+  const project = projects[0];
 
   return (
     <Cell
@@ -47,14 +40,14 @@ export default async function Project({ projectId }: { projectId?: number }) {
         </h3>
         <div className="h-8 truncate">
           Roles:&nbsp;
-          {project?.roles.map((role) => (
+          {/* {project?.roles.map((role) => (
             <span
               key={role.role.id}
               className="[&:not(:last-child)]:after:content-[',\a0']"
             >
               {role.role.title}
             </span>
-          ))}
+          ))} */}
         </div>
         <div className="h-16 overflow-hidden">Stack: {project?.stack}</div>
       </section>
