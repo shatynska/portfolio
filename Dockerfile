@@ -31,7 +31,6 @@ COPY . .
 
 # If using npm comment out above and use below instead
 
-RUN npx prisma generate
 RUN npm run build
 
 # Production image, copy all the files and run next
@@ -51,9 +50,6 @@ COPY --from=builder /app/public ./public
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-COPY --chown=nextjs:nodejs prisma ./prisma/ 
-COPY --chown=nextjs:nodejs /docker-bootstrap-app.sh ./docker-bootstrap-app.sh
-RUN chmod +x ./docker-bootstrap-app.sh
 
 USER nextjs
 
@@ -61,4 +57,4 @@ EXPOSE 3000
 
 ENV PORT 3000
 
-CMD ["./docker-bootstrap-app.sh"]
+CMD ["node", "server.js"]
