@@ -1,20 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import Cell from "./Cell";
+import Internationalization from "./Internationalization";
 
 export default function MainNavigation({ className }: { className?: string }) {
   return (
     <Cell
       className={`h-144 divide-y-2 divide-primary-300 bg-primary-50 ${className}`}
     >
-      <nav className="flex h-24 items-center justify-center gap-8 font-semibold">
-        <Link href="" title="Українська">
-          UA
-        </Link>
-        <Link href="" title="English">
-          EN
-        </Link>
-      </nav>
+      <Internationalization />
       <div className="flex h-24 items-center justify-center gap-8  ">
         <Link href="tel:+380978976847" target="_blank" title="Phone number">
           <Image
