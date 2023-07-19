@@ -1,15 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import Cell from "./Cell";
-import Internationalization from "./Internationalization";
-import { useLocale } from "next-intl";
+import I18nLinks from "./I18nLinks";
+import PartsLinks from "./PartsLinks";
 
 export default function MainNavigation({ className }: { className?: string }) {
   return (
     <Cell
       className={`h-144 divide-y-2 divide-primary-300 bg-primary-50 ${className}`}
     >
-      <Internationalization params={{ locale: useLocale() }} />
+      <I18nLinks />
       <div className="flex h-24 items-center justify-center gap-8  ">
         <Link href="tel:+380978976847" target="_blank" title="Phone number">
           <Image
@@ -56,23 +56,7 @@ export default function MainNavigation({ className }: { className?: string }) {
           />
         </Link>
       </div>
-      <nav className="flex h-72 flex-col justify-center gap-8 text-center">
-        <h2>
-          <Link href="" title="UI/UX design parts of projects">
-            Design
-          </Link>
-        </h2>
-        <h2>
-          <Link href="" title="Backend parts of projects">
-            Backend
-          </Link>
-        </h2>
-        <h2>
-          <Link href="" title="Frontend parts of projects">
-            Frontend
-          </Link>
-        </h2>
-      </nav>
+      <PartsLinks />
       <div className="flex h-24 items-center justify-center gap-8  ">
         <Link
           href="https://www.linkedin.com/in/shatynska/"
