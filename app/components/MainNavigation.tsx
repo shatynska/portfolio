@@ -2,13 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Cell from "./Cell";
 import Internationalization from "./Internationalization";
+import { useLocale } from "next-intl";
 
 export default function MainNavigation({ className }: { className?: string }) {
   return (
     <Cell
       className={`h-144 divide-y-2 divide-primary-300 bg-primary-50 ${className}`}
     >
-      <Internationalization />
+      <Internationalization params={{ locale: useLocale() }} />
       <div className="flex h-24 items-center justify-center gap-8  ">
         <Link href="tel:+380978976847" target="_blank" title="Phone number">
           <Image
