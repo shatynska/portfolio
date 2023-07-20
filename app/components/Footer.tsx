@@ -7,7 +7,9 @@ export default function Footer() {
     <footer>
       <section className="flex flex-col md:h-24 md:flex-row">
         <Cell className="h-24 items-center bg-primary-900 text-base text-primary-100">
-          <button className="font-bo text-lg">Contact me</button>
+          <button className="font-bo text-lg  hover:opacity-80">
+            Contact me
+          </button>
         </Cell>
         <Cell className=" bg-primary-300"></Cell>
         <Cell className="hidden bg-primary-50 lg:block"></Cell>
