@@ -10,6 +10,13 @@
     "Backend": "Бекенд",
     "Backend parts of projects": "Бекенд частини проектів",
     "Frontend": "Фронтенд",
-    "Frontend parts of projects": "Фронтенд частини проектів"
+    "Frontend parts of projects": "Фронтенд частини проектів",
+    "About_paragraph_1": "Я - фулстек розробник з України. Люблю створювати дизайн и працювати над фронтендом.",
+    "About_paragraph_2": "Проте мій основний інтерес в бекенді: розробляти чисту базову логіку, відповідну архітектуру і вирішувати задачі, які виникають.",
+    "About_paragraph_3": "Мій основний стек технологій: PHP, Laravel, TypeScript, React, Next.js.",
+    "Skills": "Навички",
+    "Languages": "Мови",
+    "Frameworks and Libraries": "Фреймворки та бібліотеки",
+    "Technologies and so on": "Технології та інше"
   }
 }
