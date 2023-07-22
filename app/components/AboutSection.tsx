@@ -14,19 +14,18 @@ export default async function AboutSection() {
         <p>{t("About_paragraph_2")}</p>
         <p>{t("About_paragraph_3")}</p>
       </Cell>
-      <Cell className="justify-start bg-primary-900 px-10 py-16 text-primary-100 md:h-144">
-        <h2>Skills</h2>
+      <Cell className="justify-start bg-primary-900 px-10 py-16 text-primary-100 md:h-144 [&_div]:mt-8">
+        <h2>{t("Skills")}</h2>
         <ul>
           <li>PHP, Laravel, Inertia</li>
-          <li>REST API</li>
-          <li>MySQL, Redis</li>
-          <li>Unit test</li>
           <li>JavaScript, TypeScript</li>
           <li>React, Next.js</li>
-          <li>HTML, CSS, SASS, Tailwind</li>
+          <li>PostgreSQL, MySQL, Redis</li>
+          <li>REST API, Unit test</li>
+          <li>HTML, CSS, SCSS, Tailwind</li>
           <li>Git, GitHub Actions, CI/CD</li>
-          <li>Docker, Linux, VPS</li>
-          <li>UI/UX Design</li>
+          <li>Docker Swarm, Linux, VPS</li>
+          <li>UI/UX Design, Figma</li>
         </ul>
       </Cell>
       <Cell className="hidden h-144 lg:flex">
