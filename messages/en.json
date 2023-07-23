@@ -14,6 +14,7 @@
     "About_paragraph_1": "I'm a\u00A0full-stack web developer from\u00A0Ukraine. I\u00A0like to\u00A0create designs and\u00A0work on\u00A0front-end tasks.",
     "About_paragraph_2": "However, my\u00A0core interest is\u00A0in\u00A0the\u00A0backend: developing clear basic logic, suitable architecture, and\u00A0solving different problems.",
     "About_paragraph_3": "The main technologies I\u00A0use are\u00A0PHP, Laravel, TypeScript, React, Next.js.",
-    "Skills": "Skills"
+    "Skills": "Skills",
+    "Contact me": "Contact me"
   }
 }
