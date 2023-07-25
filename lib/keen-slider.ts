@@ -1,23 +1,18 @@
-import { useState, useRef, useEffect } from "react";
+import { useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
+import { useProjectsCarouselContext } from "@/hooks/useProjectsCarouselContext";
+import checkCurrentSlideNumber from "./checkCurrentSlideNumber";
 
 export default function keenSlider() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [loaded, setLoaded] = useState(false);
-  const [currentSlideNumber, setCurrentSlideNumber] = useState(2);
-  const [paused, setPaused] = useState(false);
-  const pausedRef = useRef(paused);
-
-  function checkCurrentSlideNumber(
-    currentSlideNumber: number,
-    totalNumberOfSlides: number
-  ): number {
-    return currentSlideNumber <= totalNumberOfSlides
-      ? currentSlideNumber >= 1
-        ? currentSlideNumber
-        : totalNumberOfSlides - currentSlideNumber
-      : currentSlideNumber - totalNumberOfSlides;
-  }
+  const {
+    paused,
+    pausedRef,
+    setCurrentSlide,
+    setLoaded,
+    setCurrentSlideNumber,
+    setTotalNumberOfSlides,
+    setInstanceRefInContext,
+  } = useProjectsCarouselContext();
 
   useEffect(() => {
     pausedRef.current = paused;
@@ -45,8 +40,10 @@ export default function keenSlider() {
       slideChanged(slider) {
         setCurrentSlide(slider.track.details.rel);
       },
-      created() {
+      created(slider) {
         setLoaded(true);
+        setTotalNumberOfSlides(slider.slides.length);
+        setInstanceRefInContext(instanceRef);
       },
     },
     [
@@ -94,14 +91,5 @@ export default function keenSlider() {
     ]
   );
 
-  return {
-    sliderRef,
-    instanceRef,
-    loaded,
-    paused,
-    setPaused,
-    currentSlideNumber,
-    setCurrentSlideNumber,
-    checkCurrentSlideNumber,
-  };
+  return sliderRef;
 }
