@@ -1,3 +1,4 @@
+import { NextIntlClientProvider } from "next-intl";
 import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import "./globals.css";
@@ -11,7 +12,7 @@ export const metadata = {
     "Web developer focused on backend with frontend background. Main technology stack used: PHP, Laravel, MySQL, TypeScript, Next.js.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params,
 }: {
@@ -24,9 +25,19 @@ export default function RootLayout({
   if (params.locale !== locale) {
     notFound();
   }
+  let messages;
+  try {
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
   return (
     <html lang={locale}>
-      <body className={manrope.className}>{children}</body>
+      <body className={manrope.className}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }
