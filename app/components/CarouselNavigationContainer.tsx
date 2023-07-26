@@ -1,10 +1,10 @@
 "use client";
-import { useContext } from "react";
+
 import Image from "next/image";
-import keenSlider from "@/lib/keen-slider";
 import Cell from "./Cell";
 import { useProjectsCarouselContext } from "@/hooks/useProjectsCarouselContext";
 import checkCurrentSlideNumber from "@/lib/checkCurrentSlideNumber";
+import { useTranslations } from "next-intl";
 
 export default function CarouselNavigationContainer() {
   const {
@@ -16,13 +16,15 @@ export default function CarouselNavigationContainer() {
     instanceRefInContext,
   } = useProjectsCarouselContext();
 
+  const t = useTranslations("Index");
+
   return (
     <section className="flex flex-col md:h-24 md:flex-row">
       <Cell className="hidden bg-primary-50 md:block"></Cell>
       <Cell className="h-24 bg-primary-700 p-10 text-primary-100">
         <div className="flex items-center justify-between">
           <div className=" flex w-28 items-center justify-between">
-            <span>Project</span>
+            <span>{t("Project")}</span>
             <span>
               {currentSlideNumber} / {totalNumberOfSlides}
             </span>
@@ -80,7 +82,7 @@ export default function CarouselNavigationContainer() {
               }}
             />
           </div>
-        </div>{" "}
+        </div>
       </Cell>
       <Cell className="bg-primary-300 md:hidden lg:block"></Cell>
     </section>
