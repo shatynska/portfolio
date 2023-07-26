@@ -1,3 +1,5 @@
+import { useLocale } from "next-intl";
+import { getTranslator } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import Cell from "./Cell";
@@ -9,11 +11,14 @@ import { project as projectSchema, role } from "@/drizzle/schema";
 import { eq } from "drizzle-orm";
 
 export default async function Project({ projectId }: { projectId: number }) {
+  const locale = useLocale();
+  const t = await getTranslator(locale, "Index");
+
   const projects = await db
     .select()
     .from(projectSchema)
     .where(eq(projectSchema.id, projectId));
-    
+
   const project = projects[0];
 
   return (
@@ -39,7 +44,7 @@ export default async function Project({ projectId }: { projectId: number }) {
           {project?.title}
         </h3>
         <div className="h-8 truncate">
-          Roles:&nbsp;
+          {t("Roles")}:&nbsp;
           {/* {project?.roles.map((role) => (
             <span
               key={role.role.id}
@@ -49,7 +54,9 @@ export default async function Project({ projectId }: { projectId: number }) {
             </span>
           ))} */}
         </div>
-        <div className="h-16 overflow-hidden">Stack: {project?.stack}</div>
+        <div className="h-16 overflow-hidden">
+          {t("Stack")}: {project?.stack}
+        </div>
       </section>
 
       <section className="flex h-24 items-center  justify-center gap-8 overflow-hidden [&>*]:fill-inherit">
