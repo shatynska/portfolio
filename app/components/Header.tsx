@@ -1,10 +1,12 @@
+import { useLocale } from "next-intl";
 import { getTranslator } from "next-intl/server";
 import Image from "next/image";
 import Cell from "../components/Cell";
 import MainNavigation from "../components/MainNavigation";
 import developerImage from "/public/developer.jpg";
 
-export default async function Header({ params: {locale}, } : { params: { locale: string }; }) {
+export default async function Header() {
+  const locale = useLocale();
   const t = await getTranslator(locale, "Index");
 
   return (

@@ -4,7 +4,6 @@ import NavLinks from "./NavLinks";
 
 export default async function PartsLinks() {
   const locale = useLocale();
-
   const t = await getTranslator(locale, "Index");
 
   const navLinks = [
