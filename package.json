@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "migration:generate": "drizzle-kit generate:pg --schema=./drizzle/schema.ts",
-    "migration:push": "node -r esbuild-register drizzle/migrate.ts"
+    "migration:push": "node -r esbuild-register drizzle/migrate.ts",
+    "migrate": "drizzle-kit generate:pg --schema=./drizzle/schema.ts && node -r esbuild-register drizzle/migrate.ts"
   },
   "dependencies": {
     "@types/node": "20.1.4",
