@@ -14,7 +14,7 @@ export const projects = pgTable("projects", {
   type: text("type").notNull(),
   stack: text("stack").notNull(),
   url: text("url"),
-  gitHubUrl: text("gitHubUrl"),
+  gitHubUrl: text("gitHub_url"),
   image: text("image"),
 });
 
@@ -34,12 +34,14 @@ export const rolesRelations = relations(roles, ({ many }) => ({
 export const projectsToRoles = pgTable(
   "projects_to_roles",
   {
+    id: serial("id").notNull(),
     projectId: integer("project_id")
       .notNull()
       .references(() => projects.id),
     roleId: integer("role_id")
       .notNull()
       .references(() => roles.id),
+    type: text("description"),
   },
   (t) => ({
     pk: primaryKey(t.projectId, t.roleId),
