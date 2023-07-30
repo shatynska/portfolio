@@ -7,19 +7,23 @@ import MoreIcon from "./icons/MoreIcon";
 import GithubIcon from "./icons/GithubIcon";
 import WwwIcon from "./icons/WwwIcon";
 import { db } from "@/drizzle/";
-import { project as projectSchema, role } from "@/drizzle/schema";
+import { projects } from "@/drizzle/schema";
 import { eq } from "drizzle-orm";
 
 export default async function Project({ projectId }: { projectId: number }) {
   const locale = useLocale();
   const t = await getTranslator(locale, "Index");
 
-  const projects = await db
-    .select()
-    .from(projectSchema)
-    .where(eq(projectSchema.id, projectId));
-
-  const project = projects[0];
+  const project = await db.query.projects.findFirst({
+    where: eq(projects.id, projectId),
+    with: {
+      projectsToRoles: {
+        with: {
+          role: true,
+        },
+      },
+    },
+  });
 
   return (
     <Cell
@@ -45,14 +49,14 @@ export default async function Project({ projectId }: { projectId: number }) {
         </h3>
         <div className="h-8 truncate">
           {t("Roles")}:&nbsp;
-          {/* {project?.roles.map((role) => (
+          {project?.projectsToRoles.map((role) => (
             <span
               key={role.role.id}
               className="[&:not(:last-child)]:after:content-[',\a0']"
             >
               {role.role.title}
             </span>
-          ))} */}
+          ))}
         </div>
         <div className="h-16 overflow-hidden">
           {t("Stack")}: {project?.stack}
