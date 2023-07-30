@@ -24,9 +24,10 @@ services:
     volumes:
       - /var/www/shatynska.com/tmp/db:/var/lib/postgresql
     environment:
-      POSTGRES_USER: shatynska
-      POSTGRES_PASSWORD: shatynska
-      POSTGRES_DB: shatynska
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      PGDATA: "/var/lib/postgresql/data/pgdata"
     ports:
       - 5432:5432
     labels:
