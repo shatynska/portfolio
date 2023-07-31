@@ -1,14 +1,15 @@
+import { db } from "@/drizzle/";
+import { projects } from "@/drizzle/schema";
+import { eq } from "drizzle-orm";
 import { useLocale } from "next-intl";
 import { getTranslator } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import Cell from "./Cell";
+import RolesOfProject from "./RolesOfProject";
 import MoreIcon from "./icons/MoreIcon";
 import GithubIcon from "./icons/GithubIcon";
 import WwwIcon from "./icons/WwwIcon";
-import { db } from "@/drizzle/";
-import { projects } from "@/drizzle/schema";
-import { eq } from "drizzle-orm";
 
 export default async function Project({ projectId }: { projectId: number }) {
   const locale = useLocale();
@@ -24,6 +25,8 @@ export default async function Project({ projectId }: { projectId: number }) {
       },
     },
   });
+
+  const roles = project?.projectsToRoles.map((role) => role.role);
 
   return (
     <Cell
@@ -49,14 +52,7 @@ export default async function Project({ projectId }: { projectId: number }) {
         </h3>
         <div className="h-8 truncate">
           {t("Roles")}:&nbsp;
-          {project?.projectsToRoles.map((role) => (
-            <span
-              key={role.role.id}
-              className="[&:not(:last-child)]:after:content-[',\a0']"
-            >
-              {role.role.title}
-            </span>
-          ))}
+          <RolesOfProject roles={ roles } />
         </div>
         <div className="h-16 overflow-hidden">
           {t("Stack")}: {project?.stack}
