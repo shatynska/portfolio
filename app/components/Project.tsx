@@ -50,10 +50,7 @@ export default async function Project({ projectId }: { projectId: number }) {
         <h3 className="flex h-16 items-center overflow-hidden">
           {project?.title}
         </h3>
-        <div className="h-8 truncate">
-          {t("Roles")}:&nbsp;
-          <RolesOfProject roles={ roles } />
-        </div>
+        <RolesOfProject roles={roles} />
         <div className="h-16 overflow-hidden">
           {t("Stack")}: {project?.stack}
         </div>

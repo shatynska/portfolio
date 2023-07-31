@@ -34,10 +34,11 @@ export default async function RolesOfProject({
   }
 
   return (
-    <span className="[&>span:not(:last-child)]:after:content-[',\a0']">
+    <div className="h-8 truncate [&>span:not(:last-child)]:after:content-[',\a0']">
+      {t("Roles")}:&nbsp;
       {rolesArray.map((role) => (
         <span>{role}</span>
       ))}
-    </span>
+    </div>
   );
 }
