@@ -1,4 +1,5 @@
-import React from "react";
+import { useLocale } from "next-intl";
+import { getTranslator } from "next-intl/server";
 
 type Role = {
   id: number;
@@ -6,22 +7,27 @@ type Role = {
   titleUa: string;
 };
 
-export default function RolesOfProject({
+export default async function RolesOfProject({
   roles = [],
 }: {
   roles: Role[] | undefined;
 }) {
-  let rolesArray = [];
+  const locale = useLocale();
+  const t = await getTranslator(locale, "Index");
 
   const rolesIds = roles?.map((role) => role.id);
   const isFullstack = [2, 3].every((roleId) => rolesIds?.includes(roleId));
 
+  const localeForTitle = locale[0].toUpperCase() + locale.substring(1);
+
+  let rolesArray = [];
+
   if (roles) {
     for (const role of roles) {
       if (role.id === 1 || !isFullstack) {
-        rolesArray.push(role.titleUa);
+        rolesArray.push(role[`title${localeForTitle}` as keyof typeof role]);
       } else {
-        rolesArray.push(`Fullstack developer`);
+        rolesArray.push(t(`Fullstack developer`));
         break;
       }
     }
