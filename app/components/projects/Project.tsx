@@ -5,11 +5,11 @@ import { useLocale } from "next-intl";
 import { getTranslator } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
-import Cell from "./Cell";
+import Cell from "../Cell";
 import RolesOfProject from "./RolesOfProject";
-import MoreIcon from "./icons/MoreIcon";
-import GithubIcon from "./icons/GithubIcon";
-import WwwIcon from "./icons/WwwIcon";
+import MoreIcon from "../icons/MoreIcon";
+import GithubIcon from "../icons/GithubIcon";
+import WwwIcon from "../icons/WwwIcon";
 
 export default async function Project({ projectId }: { projectId: number }) {
   const locale = useLocale();

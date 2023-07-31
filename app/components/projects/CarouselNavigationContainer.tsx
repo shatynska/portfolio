@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Cell from "./Cell";
+import Cell from "../Cell";
 import { useProjectsCarouselContext } from "@/hooks/useProjectsCarouselContext";
 import checkCurrentSlideNumber from "@/lib/checkCurrentSlideNumber";
 import { useTranslations } from "next-intl";

@@ -1,6 +1,6 @@
 import { ProjectsCarouselContextProvider } from "@/contexts/ProjectsCarouselContext";
-import Carousel from "../components/Carousel";
-import Project from "../components/Project";
+import Carousel from "./Carousel";
+import Project from "./Project";
 import { db } from "@/drizzle/";
 import { projects } from "@/drizzle/schema";
 
