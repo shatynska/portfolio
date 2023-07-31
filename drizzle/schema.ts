@@ -24,7 +24,8 @@ export const projectsRelations = relations(projects, ({ many }) => ({
 
 export const roles = pgTable("roles", {
   id: serial("id").primaryKey().notNull(),
-  title: text("title").notNull(),
+  titleEn: text("title_en").notNull(),
+  titleUa: text("title_ua").notNull(),
 });
 
 export const rolesRelations = relations(roles, ({ many }) => ({
