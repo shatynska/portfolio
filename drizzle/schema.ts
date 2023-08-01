@@ -9,28 +9,27 @@ import {
 import { relations } from "drizzle-orm";
 
 export const projects = pgTable("projects", {
-  id: serial("id").primaryKey().notNull(),
-  title: text("title").notNull(),
-  type: text("type").notNull(),
+  id: serial("id").primaryKey(),
+  titleEn: text("title_en").notNull(),
+  titleUa: text("title_ua").notNull(),
+  typeId: integer("type_id").notNull(),
   stack: text("stack").notNull(),
   url: text("url"),
   gitHubUrl: text("gitHub_url"),
   image: text("image"),
 });
 
-export const projectsRelations = relations(projects, ({ many }) => ({
-  projectsToRoles: many(projectsToRoles),
-}));
+export const types = pgTable("types", {
+  id: serial("id").primaryKey().notNull(),
+  titleEn: text("title_en").notNull(),
+  titleUa: text("title_ua").notNull(),
+});
 
 export const roles = pgTable("roles", {
   id: serial("id").primaryKey().notNull(),
   titleEn: text("title_en").notNull(),
   titleUa: text("title_ua").notNull(),
 });
-
-export const rolesRelations = relations(roles, ({ many }) => ({
-  projectsToRoles: many(projectsToRoles),
-}));
 
 export const projectsToRoles = pgTable(
   "projects_to_roles",
@@ -62,3 +61,19 @@ export const projectsToRolesRelations = relations(
     }),
   })
 );
+
+export const projectsRelations = relations(projects, ({ many, one }) => ({
+  projectsToRoles: many(projectsToRoles),
+  types: one(types, {
+    fields: [projects.typeId],
+    references: [types.id],
+  }),
+}));
+
+export const typesRelations = relations(types, ({ many }) => ({
+  projects: many(projects),
+}));
+
+export const rolesRelations = relations(roles, ({ many }) => ({
+  projectsToRoles: many(projectsToRoles),
+}));
