@@ -1,7 +1,7 @@
 "use client";
 
 import "keen-slider/keen-slider.min.css";
-import CarouselNavigationContainer from "./CarouselNavigationContainer";
+import CarouselNavigation from "./CarouselNavigation";
 import keenSlider from "@/lib/keen-slider";
 import { useProjectsCarouselContext } from "@/hooks/useProjectsCarouselContext";
 
@@ -25,9 +25,7 @@ export default function Carousel({
           {children}
         </div>
       </div>
-      {loaded && instanceRefInContext.current && (
-        <CarouselNavigationContainer />
-      )}
+      {loaded && instanceRefInContext.current && <CarouselNavigation />}
     </div>
   );
 }

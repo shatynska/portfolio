@@ -6,7 +6,7 @@ import { useProjectsCarouselContext } from "@/hooks/useProjectsCarouselContext";
 import checkCurrentSlideNumber from "@/lib/checkCurrentSlideNumber";
 import { useTranslations } from "next-intl";
 
-export default function CarouselNavigationContainer() {
+export default function CarouselNavigation() {
   const {
     paused,
     setPaused,
