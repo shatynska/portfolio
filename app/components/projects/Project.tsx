@@ -12,6 +12,11 @@ import GithubIcon from "../icons/GithubIcon";
 import WwwIcon from "../icons/WwwIcon";
 import { localeForSchema } from "@/constants";
 
+type TitleForSchema = {
+  titleEn: string;
+  titleUa: string;
+};
+
 export default async function Project({ projectId }: { projectId: number }) {
   const locale = useLocale();
   const t = await getTranslator(locale, "Index");
@@ -28,13 +33,16 @@ export default async function Project({ projectId }: { projectId: number }) {
     },
   });
 
-  const titleForSchema = `title${localeForSchema[locale]}`;
+  const titleForSchema =
+    `title${localeForSchema[locale]}` as keyof TitleForSchema;
 
-  const roles = project?.projectsToRoles.map((role) => role.role);
+  const roles = project?.projectsToRoles.map((role) => {
+    return { id: role.role.id, title: role.role[titleForSchema] };
+  });
 
-  const title = project?.[titleForSchema as keyof typeof project.types];
+  const title = project?.[titleForSchema];
 
-  const type = project?.types[titleForSchema as keyof typeof project.types];
+  const type = project?.types[titleForSchema];
 
   return (
     <Cell
