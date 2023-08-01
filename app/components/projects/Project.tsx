@@ -10,11 +10,11 @@ import RolesOfProject from "./RolesOfProject";
 import MoreIcon from "../icons/MoreIcon";
 import GithubIcon from "../icons/GithubIcon";
 import WwwIcon from "../icons/WwwIcon";
+import { localeForSchema } from "@/constants";
 
 export default async function Project({ projectId }: { projectId: number }) {
   const locale = useLocale();
   const t = await getTranslator(locale, "Index");
-  const localeForSchema = locale[0].toUpperCase() + locale.substring(1);
 
   const project = await db.query.projects.findFirst({
     where: eq(projects.id, projectId),
@@ -28,12 +28,13 @@ export default async function Project({ projectId }: { projectId: number }) {
     },
   });
 
+  const titleForSchema = `title${localeForSchema[locale]}`;
+
   const roles = project?.projectsToRoles.map((role) => role.role);
 
-  const title =
-    project?.[`title${localeForSchema}` as keyof typeof project.types];
-  const type =
-    project?.types[`title${localeForSchema}` as keyof typeof project.types];
+  const title = project?.[titleForSchema as keyof typeof project.types];
+
+  const type = project?.types[titleForSchema as keyof typeof project.types];
 
   return (
     <Cell
