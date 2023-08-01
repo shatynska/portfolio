@@ -14,10 +14,12 @@ import WwwIcon from "../icons/WwwIcon";
 export default async function Project({ projectId }: { projectId: number }) {
   const locale = useLocale();
   const t = await getTranslator(locale, "Index");
+  const localeForSchema = locale[0].toUpperCase() + locale.substring(1);
 
   const project = await db.query.projects.findFirst({
     where: eq(projects.id, projectId),
     with: {
+      types: true,
       projectsToRoles: {
         with: {
           role: true,
@@ -28,6 +30,11 @@ export default async function Project({ projectId }: { projectId: number }) {
 
   const roles = project?.projectsToRoles.map((role) => role.role);
 
+  const title =
+    project?.[`title${localeForSchema}` as keyof typeof project.types];
+  const type =
+    project?.types[`title${localeForSchema}` as keyof typeof project.types];
+
   return (
     <Cell
       key={project?.id}
@@ -37,7 +44,7 @@ export default async function Project({ projectId }: { projectId: number }) {
         {project?.image && (
           <Image
             src={project.image}
-            alt={project?.title + "picture"}
+            alt={project?.titleEn + "picture"}
             width="384"
             height="192"
             className="object-contain"
@@ -46,10 +53,8 @@ export default async function Project({ projectId }: { projectId: number }) {
       </section>
 
       <section className="flex h-72 w-full flex-col gap-4 p-10 leading-6 ">
-        <div className="h-8">{project?.type}</div>
-        <h3 className="flex h-16 items-center overflow-hidden">
-          {project?.title}
-        </h3>
+        <div className="h-8">{type}</div>
+        <h3 className="flex h-16 items-center overflow-hidden">{title}</h3>
         <RolesOfProject roles={roles} />
         <div className="h-16 overflow-hidden">
           {t("Stack")}: {project?.stack}
