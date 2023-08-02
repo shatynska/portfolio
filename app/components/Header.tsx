@@ -2,7 +2,7 @@ import { useLocale } from "next-intl";
 import { getTranslator } from "next-intl/server";
 import Image from "next/image";
 import Cell from "../components/Cell";
-import MainNavigation from "../components/MainNavigation";
+import MainNavigation from "./navigation/MainNavigation";
 import developerImage from "/public/developer.jpg";
 
 export default async function Header() {

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import Cell from "./Cell";
+import Cell from "../Cell";
 import I18nLinks from "./I18nLinks";
-import PartsLinks from "./PartsLinks";
+import PartsLinks from "./MainLinks";
 
 export default function MainNavigation({ className }: { className?: string }) {
   return (
