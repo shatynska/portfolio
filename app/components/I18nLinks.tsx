@@ -1,12 +1,23 @@
+"use client";
+
 import { useLocale } from "next-intl";
+import { usePathname } from "next/navigation";
 import NavLinks from "./NavLinks";
 
 export default function I18nLinks() {
   const locale = useLocale();
 
+  const pathname = usePathname();
+  const pathnameWithoutLocale = pathname.replace(locale, "/");
+
   const navLinks = [
-    { name: "UA", href: "/", locale: "ua", title: "Українська" },
-    { name: "EN", href: "/", locale: "en", title: "English" },
+    {
+      name: "UA",
+      href: pathnameWithoutLocale,
+      locale: "ua",
+      title: "Українська",
+    },
+    { name: "EN", href: pathnameWithoutLocale, locale: "en", title: "English" },
   ];
 
   return (
