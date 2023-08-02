@@ -8,6 +8,11 @@ export default async function PartsLinks() {
 
   const navLinks = [
     {
+      name: t("Home"),
+      href: "/",
+      title: t("Home page"),
+    },
+    {
       name: t("Design"),
       href: "/design",
       title: t("UI/UX design parts of projects"),
@@ -26,7 +31,7 @@ export default async function PartsLinks() {
 
   return (
     <NavLinks
-      className="flex h-72 flex-col justify-center gap-8 text-center text-2xl font-semibold"
+      className="flex h-72 flex-col justify-between p-12 text-center text-2xl font-semibold"
       params={{ locale: locale, navLinks: navLinks }}
     />
   );
