@@ -4,13 +4,10 @@ import { eq } from "drizzle-orm";
 import { useLocale } from "next-intl";
 import { getTranslator } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
 import Cell from "../Cell";
 import RolesOfProject from "./RolesOfProject";
-import MoreIcon from "../icons/MoreIcon";
-import GithubIcon from "../icons/GithubIcon";
-import WwwIcon from "../icons/WwwIcon";
 import { localeForSchema } from "@/constants";
+import LinksOfProject from "./LinksOfProject";
 
 type TitleForSchema = {
   titleEn: string;
@@ -53,7 +50,7 @@ export default async function Project({ projectId }: { projectId: number }) {
         {project?.image && (
           <Image
             src={project.image}
-            alt={project?.titleEn + "picture"}
+            alt={title + "picture"}
             width="384"
             height="192"
             className="object-contain"
@@ -70,29 +67,7 @@ export default async function Project({ projectId }: { projectId: number }) {
         </div>
       </section>
 
-      <section className="flex h-24 items-center  justify-center gap-8 overflow-hidden [&>*]:fill-inherit">
-        {project?.gitHubUrl && (
-          <Link
-            href={project?.gitHubUrl || ""}
-            target="_blank"
-            className="[&>*]:fill-inherit"
-            title="GitHub repository"
-          >
-            <GithubIcon />
-          </Link>
-        )}
-
-        {project?.url && (
-          <Link
-            href={project.url}
-            target="_blank"
-            className="[&>*]:fill-inherit"
-            title="URL address"
-          >
-            <WwwIcon />
-          </Link>
-        )}
-      </section>
+      <LinksOfProject gitHubUrl={project?.gitHubUrl} url={project?.url} />
     </Cell>
   );
 }
