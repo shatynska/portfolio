@@ -7,6 +7,8 @@ export default function keenSlider() {
   const {
     paused,
     pausedRef,
+    outOfView,
+    outOfViewRef,
     setCurrentSlide,
     setLoaded,
     setCurrentSlideNumber,
@@ -17,6 +19,10 @@ export default function keenSlider() {
   useEffect(() => {
     pausedRef.current = paused;
   }, [paused, pausedRef]);
+
+  useEffect(() => {
+    outOfViewRef.current = outOfView;
+  }, [outOfView, outOfViewRef]);
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
@@ -58,11 +64,11 @@ export default function keenSlider() {
         function nextTimeout() {
           clearTimeout(timeout);
           if (mouseOver) return;
-          if (pausedRef.current) return;
+          if (pausedRef.current || outOfViewRef.current) return;
           timeout = setTimeout(() => {
-            if (pausedRef.current) return;
+            if (pausedRef.current || outOfViewRef.current) return;
             slider.next();
-          }, 3000);
+          }, 4000);
         }
 
         slider.on("created", () => {

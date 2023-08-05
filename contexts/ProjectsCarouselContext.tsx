@@ -18,6 +18,9 @@ export type ProjectCarouselType = {
   paused: boolean;
   setPaused: Dispatch<SetStateAction<boolean>>;
   pausedRef: any;
+  outOfView: boolean;
+  setOutOfView: Dispatch<SetStateAction<boolean>>;
+  outOfViewRef: any;
   totalNumberOfSlides: number;
   setTotalNumberOfSlides: Dispatch<SetStateAction<number>>;
   instanceRefInContext: any;
@@ -38,6 +41,8 @@ export const ProjectsCarouselContextProvider = ({
   const [currentSlideNumber, setCurrentSlideNumber] = useState(2);
   const [paused, setPaused] = useState(false);
   const pausedRef = useRef(paused);
+  const [outOfView, setOutOfView] = useState(true);
+  const outOfViewRef = useRef(outOfView);
   const [totalNumberOfSlides, setTotalNumberOfSlides] = useState(0);
   const [instanceRefInContext, setInstanceRefInContext] = useState(null);
 
@@ -51,6 +56,9 @@ export const ProjectsCarouselContextProvider = ({
     paused,
     setPaused,
     pausedRef,
+    outOfView,
+    setOutOfView,
+    outOfViewRef,
     totalNumberOfSlides,
     setTotalNumberOfSlides,
     instanceRefInContext,

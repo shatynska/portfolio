@@ -4,6 +4,7 @@ import "keen-slider/keen-slider.min.css";
 import CarouselNavigation from "./CarouselNavigation";
 import keenSlider from "@/lib/keen-slider";
 import { useProjectsCarouselContext } from "@/hooks/useProjectsCarouselContext";
+import { useInView } from "react-intersection-observer";
 
 export default function Carousel({
   className,
@@ -13,10 +14,19 @@ export default function Carousel({
   children?: React.ReactNode;
 }) {
   const sliderRef = keenSlider();
-  const { loaded, instanceRefInContext } = useProjectsCarouselContext();
+  const { loaded, instanceRefInContext, paused, setOutOfView } =
+    useProjectsCarouselContext();
+
+  const [inViewRef] = useInView({
+    threshold: 1,
+    onChange: (inView) => {
+      setOutOfView(!inView);
+      if (inView && !paused) instanceRefInContext.current?.next();
+    },
+  });
 
   return (
-    <div className={className}>
+    <div className={className} ref={inViewRef}>
       <div className="navigation-wrapper">
         <div
           ref={sliderRef}
