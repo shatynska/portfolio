@@ -41,7 +41,8 @@ export const projectsToRoles = pgTable(
     roleId: integer("role_id")
       .notNull()
       .references(() => roles.id),
-    description: text("description"),
+    descriptionEn: text("description_en"),
+    descriptionUa: text("description_ua"),
     active: boolean("active").default(false).notNull(),
   },
   (t) => ({
