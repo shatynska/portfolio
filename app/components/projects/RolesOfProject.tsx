@@ -1,10 +1,6 @@
 import { useLocale } from "next-intl";
 import { getTranslator } from "next-intl/server";
-
-type Role = {
-  id: number;
-  title: string;
-};
+import { Role } from "@/types";
 
 export default async function RolesOfProject({
   roles = [],
