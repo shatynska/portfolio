@@ -6,12 +6,18 @@ import { getTranslator } from "next-intl/server";
 import Image from "next/image";
 import Cell from "../Cell";
 import RolesOfProject from "./RolesOfProject";
-import { localeForSchema } from "@/constants";
 import LinksOfProject from "./LinksOfProject";
+import { localeForSchema } from "@/constants";
+import { Role, PartOfProject } from "@/types";
 
 type TitleForSchema = {
   titleEn: string;
   titleUa: string;
+};
+
+type DescriptionForSchema = {
+  descriptionEn: string;
+  descriptionUa: string;
 };
 
 export default async function Project({ projectId }: { projectId: number }) {
@@ -33,8 +39,22 @@ export default async function Project({ projectId }: { projectId: number }) {
   const titleForSchema =
     `title${localeForSchema[locale]}` as keyof TitleForSchema;
 
-  const roles = project?.projectsToRoles.map((role) => {
-    return { id: role.role.id, title: role.role[titleForSchema] };
+  const descriptionForSchema =
+    `description${localeForSchema[locale]}` as keyof DescriptionForSchema;
+
+  let roles: Role[] = [];
+
+  let partsOfProject: PartOfProject[] = [];
+
+  project?.projectsToRoles.forEach((role) => {
+    roles.push({ id: role.roleId, title: role.role[titleForSchema] });
+    
+    if (role.active)
+      partsOfProject.push({
+        id: role.roleId,
+        title: role.role[titleForSchema],
+        description: role[descriptionForSchema],
+      });
   });
 
   const title = project?.[titleForSchema];
@@ -67,7 +87,11 @@ export default async function Project({ projectId }: { projectId: number }) {
         </div>
       </section>
 
-      <LinksOfProject gitHubUrl={project?.gitHubUrl} url={project?.url} />
+      <LinksOfProject
+        moreInfo={partsOfProject}
+        gitHubUrl={project?.gitHubUrl}
+        url={project?.url}
+      />
     </Cell>
   );
 }
