@@ -14,12 +14,12 @@ export default async function Footer() {
             {t("Contact me")}
           </Link>
         </Cell>
-        <Cell className=" bg-primary-300"></Cell>
-        <Cell className="hidden bg-primary-50 lg:block"></Cell>
+        <Cell className=" bg-primary-300" />
+        <Cell className="order-first md:hidden lg:order-none bg-primary-50" />
       </section>
       <section className="flex flex-col md:h-24 md:flex-row">
-        <Cell className="hidden bg-primary-300 md:block "></Cell>
-        <Cell className="hidden bg-primary-50 lg:block"></Cell>
+        <Cell className="hidden bg-primary-300 md:block " />
+        <Cell className="hidden bg-primary-50 lg:block" />
         <Cell className="items-center bg-primary-600 text-sm text-primary-100">
           © 2023 {t("Helen") + "\u00A0" + t("Shatynska")}
         </Cell>
