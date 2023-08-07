@@ -15,7 +15,7 @@ export default async function AboutSection() {
         <p>{t("About_paragraph_3")}</p>
       </Cell>
       <Cell className="justify-start bg-primary-900 px-10 py-16 text-primary-100 md:h-144 [&_div]:mt-8">
-        <h2>{t("Skills")}</h2>
+        <h2 className="text-2xl font-semibold">{t("Skills")}</h2>
         <ul>
           <li>PHP, Laravel, Inertia</li>
           <li>JavaScript, TypeScript</li>
