@@ -10,8 +10,8 @@ export default async function Logo() {
 
   return (
     <Link href="/" title={t("Home page")}>
-      <div className="m-4 flex gap-2">
-        <Image src={logoImage} alt={t("logo")} height={40} width={40} />
+      <div className="flex gap-2 px-10">
+        <Image src={logoImage} alt={t("Logo")} height={40} width={40} />
         <div>
           {t("Web")}
           <br />

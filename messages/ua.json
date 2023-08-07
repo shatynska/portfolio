@@ -1,5 +1,6 @@
 {
   "Index": {
+    "Logo": "Логотип",
     "Web": "Веб",
     "Developer": "Розробник",
     "Helen": "Олена",
@@ -19,6 +20,7 @@
     "Skills": "Навички",
     "Contact me": "Контакти",
     "Project": "Проект",
+    "Projects": "Проекти",
     "Roles": "Ролі",
     "Stack": "Стек",
     "Fullstack developer": "Фулстек розробник"

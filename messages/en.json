@@ -1,5 +1,6 @@
 {
   "Index": {
+    "Logo": "Logo",
     "Web": "Web",
     "Developer": "Developer",
     "Helen": "Helen",
@@ -19,6 +20,7 @@
     "Skills": "Skills",
     "Contact me": "Contact me",
     "Project": "Project",
+    "Projects": "Projects",
     "Roles": "Roles",
     "Stack": "Stack",
     "Fullstack developer": "Fullstack developer"
