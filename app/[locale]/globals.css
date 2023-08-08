@@ -18,6 +18,10 @@
     text-decoration: none;
   }
 
+  a:hover {
+    opacity: 0.8;
+  }
+
   body {
     display: flex;
     justify-content: center;
