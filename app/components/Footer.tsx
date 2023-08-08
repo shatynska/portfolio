@@ -15,7 +15,7 @@ export default async function Footer() {
           </Link>
         </Cell>
         <Cell className="bg-primary-300" />
-        <Cell className="order-first border border-primary-200 bg-primary-50 md:hidden lg:order-none" />
+        <Cell className="order-first border border-primary-200 bg-primary-50 md:hidden lg:order-none lg:block" />
       </section>
       <section className="flex flex-col md:h-24 md:flex-row">
         <Cell className="hidden bg-primary-300 md:block " />
