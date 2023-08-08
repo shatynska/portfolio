@@ -20,7 +20,7 @@ export default function CarouselNavigation() {
 
   return (
     <section className="flex flex-col md:h-24 md:flex-row">
-      <Cell className="hidden bg-primary-50 md:block" />
+      <Cell className="hidden border border-primary-200 bg-primary-50 md:block" />
       <Cell className="h-24 bg-primary-700 p-10 text-primary-100">
         <div className="flex items-center justify-between">
           <div className=" flex w-28 items-center justify-between">
