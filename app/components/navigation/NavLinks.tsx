@@ -19,7 +19,9 @@ export default function NavLinks({
 }) {
   const pathname = usePathname();
 
-  const pathnameWithoutLocale = pathname.replace(locale, "").replace("//", "/");
+  const pathnameWithoutLocale = pathname
+    .replace(`/${locale}`, "/")
+    .replace("//", "/");
 
   return (
     <nav className={className}>
@@ -39,7 +41,7 @@ export default function NavLinks({
             </Link>
           );
         } else if (link.href !== "/" || link.locale) {
-          return <span className="font-extrabold">{link.name}</span>;
+          return <span className="opacity-70">{link.name}</span>;
         }
       })}
     </nav>
