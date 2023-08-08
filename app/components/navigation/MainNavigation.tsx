@@ -2,17 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import Cell from "../Cell";
 import I18nLinks from "./I18nLinks";
-import PartsLinks from "./MainLinks";
+import MainLinks from "./MainLinks";
 import ContactLinks from "./ContactLinks";
 
 export default function MainNavigation({ className }: { className?: string }) {
   return (
     <Cell
-      className={`h-144 divide-y-2 divide-primary-300 bg-primary-50 ${className}`}
+      className={`h-144 divide-y-2 divide-primary-300 border border-primary-200 bg-primary-50 ${className}`}
     >
       <I18nLinks />
       <ContactLinks />
-      <PartsLinks />
+      <MainLinks />
       <div className="flex h-24 items-center justify-center gap-8  ">
         <Link
           href="https://www.linkedin.com/in/shatynska/"

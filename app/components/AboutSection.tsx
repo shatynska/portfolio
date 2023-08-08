@@ -9,7 +9,7 @@ export default async function AboutSection() {
 
   return (
     <section className="flex flex-col md:flex-row [&_p:not(:first-child)]:mt-4">
-      <Cell className="bg-primary-50 px-10 py-16 md:h-144 [&>p:not(:first-child)]:mt-4">
+      <Cell className="border border-primary-200 bg-primary-50 px-10 py-16 md:h-144 [&>p:not(:first-child)]:mt-4">
         <p>{t("About_paragraph_1")}</p>
         <p>{t("About_paragraph_2")}</p>
         <p>{t("About_paragraph_3")}</p>
