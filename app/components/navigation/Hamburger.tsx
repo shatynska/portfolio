@@ -1,9 +1,11 @@
 import React from "react";
 import MainNavigation from "./MainNavigation";
 
-export default function Hamburger() {
+export default function Hamburger({ className }: { className?: string }) {
   return (
-    <section className="fixed left-0 top-0 flex w-full flex-row justify-end lg:hidden">
+    <section
+      className={`fixed left-0 top-0 flex w-full flex-row justify-end border-x ${className}`}
+    >
       <input id="menu-toggle" className="peer hidden" type="checkbox" />
       <label
         htmlFor="menu-toggle"

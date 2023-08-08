@@ -11,7 +11,7 @@ export default function Home() {
       <AboutSection />
       <Projects />
       <Footer />
-      <Hamburger />
+      <Hamburger className={"lg:hidden"} />
     </main>
   );
 }
