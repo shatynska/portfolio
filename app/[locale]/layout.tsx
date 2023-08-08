@@ -3,6 +3,7 @@ import { useLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import "./globals.css";
 import { Manrope } from "next/font/google";
+import Footer from "../components/Footer";
 
 const manrope = Manrope({ subsets: ["latin", "cyrillic"] });
 
@@ -21,7 +22,6 @@ export default async function RootLayout({
 }) {
   const locale = useLocale();
 
-  // Show a 404 error if the user requests an unknown locale
   if (params.locale !== locale) {
     notFound();
   }
@@ -35,7 +35,8 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className={manrope.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+            {children}
+            <Footer />
         </NextIntlClientProvider>
       </body>
     </html>
