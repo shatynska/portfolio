@@ -20,7 +20,13 @@ type DescriptionForSchema = {
   descriptionUa: string;
 };
 
-export default async function Project({ projectId }: { projectId: number }) {
+export default async function Project({
+  projectId,
+  className,
+}: {
+  projectId: number;
+  className?: string;
+}) {
   const locale = useLocale();
   const t = await getTranslator(locale, "Index");
 
@@ -48,7 +54,7 @@ export default async function Project({ projectId }: { projectId: number }) {
 
   project?.projectsToRoles.forEach((role) => {
     roles.push({ id: role.roleId, title: role.role[titleForSchema] });
-    
+
     if (role.active)
       partsOfProject.push({
         id: role.roleId,
@@ -64,7 +70,7 @@ export default async function Project({ projectId }: { projectId: number }) {
   return (
     <Cell
       key={project?.id}
-      className="keen-slider__slide flex h-144 divide-y-2 px-0 text-sm"
+      className={`keen-slider__slide flex h-144 divide-y-2 px-0 text-sm ${className}`}
     >
       <section className="flex h-48 w-full justify-center overflow-hidden pb-8 pt-16">
         {project?.image && (
