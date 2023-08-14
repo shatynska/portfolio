@@ -15,10 +15,9 @@ export default function LinksOfProject({
 }) {
   return (
     <section className="flex h-24 items-center  justify-center gap-8 overflow-hidden [&>*]:fill-inherit">
-      {Boolean(moreInfo.length) && (
+      {moreInfo.length && (
         <Link
-          href={"/"}
-          target="_blank"
+          href={`/projects/${moreInfo[0].id}`}
           className="[&>*]:fill-inherit"
           title="More information"
         >
