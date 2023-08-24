@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname } from "next-intl/client";
 import Link from "next-intl/link";
 
 type NavLink = {
@@ -19,10 +19,6 @@ export default function NavLinks({
 }) {
   const pathname = usePathname();
 
-  const pathnameWithoutLocale = pathname
-    .replace(`/${locale}`, "/")
-    .replace("//", "/");
-
   return (
     <nav className={className}>
       {navLinks.map((link) => {
@@ -31,7 +27,7 @@ export default function NavLinks({
         if (link.locale) {
           isActive = locale.match(link.locale);
         } else {
-          isActive = pathnameWithoutLocale === link.href;
+          isActive = pathname === link.href;
         }
 
         if (!isActive) {

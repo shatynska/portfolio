@@ -1,11 +1,11 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
+import { usePathname } from "next-intl/client";
 import Cell from "../components/Cell";
 import ContactMeSection from "./ContactMeSection";
 
-export default async function Footer() {
+export default function Footer() {
   const t = useTranslations("Index");
 
   const pathname = usePathname();
