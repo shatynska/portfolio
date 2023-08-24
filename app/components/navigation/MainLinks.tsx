@@ -1,10 +1,11 @@
-import { useLocale } from "next-intl";
-import { getTranslator } from "next-intl/server";
+"use client"
+
+import { useLocale, useTranslations } from "next-intl";
 import NavLinks from "./NavLinks";
 
-export default async function PartsLinks() {
+export default function PartsLinks() {
   const locale = useLocale();
-  const t = await getTranslator(locale, "Index");
+  const t = useTranslations("Index");
 
   const navLinks = [
     {
