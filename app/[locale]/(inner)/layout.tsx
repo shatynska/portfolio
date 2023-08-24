@@ -1,5 +1,4 @@
 import HeaderForInnerPage from "@/app/components/HeaderForInnerPage";
-import Hamburger from "@/app/components/navigation/Hamburger";
 
 export default async function InnerLayout({
   children,
@@ -10,7 +9,6 @@ export default async function InnerLayout({
     <>
       <HeaderForInnerPage />
       {children}
-      <Hamburger />
     </>
   );
 }
