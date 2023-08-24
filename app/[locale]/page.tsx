@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import AboutSection from "../components/AboutSection";
 import Projects from "../components/projects/Projects";
-import Hamburger from "../components/navigation/Hamburger";
+import HamburgerMenu from "../components/navigation/HamburgerMenu";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
       <AboutSection />
       <Projects />
-      <Hamburger className={"lg:hidden"} />
+      <HamburgerMenu className={"lg:hidden"} />
     </main>
   );
 }
