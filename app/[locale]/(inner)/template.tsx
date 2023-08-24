@@ -1,4 +1,4 @@
-import Hamburger from "@/app/components/navigation/Hamburger";
+import HamburgerMenu from "@/app/components/navigation/HamburgerMenu";
 
 export default async function InnerTemplate({
   children,
@@ -8,7 +8,7 @@ export default async function InnerTemplate({
   return (
     <>
       {children}
-      <Hamburger />
+      <HamburgerMenu />
     </>
   );
 }
