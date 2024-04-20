@@ -1,10 +1,11 @@
 "use client";
 
-import "keen-slider/keen-slider.min.css";
-import CarouselNavigation from "./CarouselNavigation";
-import keenSlider from "@/lib/keen-slider";
 import { useProjectsCarouselContext } from "@/hooks/useProjectsCarouselContext";
+import keenSlider from "@/lib/keen-slider";
+import "keen-slider/keen-slider.min.css";
 import { useInView } from "react-intersection-observer";
+import CarouselNavigation from "./CarouselNavigation";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default function Carousel({
   className,
@@ -26,6 +27,7 @@ export default function Carousel({
   });
 
   return (
+    <ErrorBoundary fallback={<div>Something went wrong</div>}>
     <div className={className} ref={inViewRef}>
       <div className="navigation-wrapper">
         <div
@@ -37,5 +39,6 @@ export default function Carousel({
       </div>
       {loaded && instanceRefInContext.current && <CarouselNavigation />}
     </div>
+    </ErrorBoundary>
   );
 }
