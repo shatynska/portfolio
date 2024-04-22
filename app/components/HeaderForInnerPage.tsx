@@ -1,7 +1,7 @@
-import Cell from "./Cell";
-import Logo from "./Logo";
+import Cell from './Cell';
+import Logo from './Logo';
 
-export default async function HeaderForInnerPage() {
+export default function HeaderForInnerPage() {
   return (
     <header className="flex flex-col md:h-24 md:flex-row">
       <Cell className="h-24 flex-row gap-4 bg-primary-900 text-sm text-primary-100">

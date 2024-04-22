@@ -1,6 +1,6 @@
-import HamburgerMenu from "@/app/components/navigation/HamburgerMenu";
+import HamburgerMenu from '@/app/components/navigation/HamburgerMenu';
 
-export default async function InnerTemplate({
+export default function InnerTemplate({
   children,
 }: {
   children: React.ReactNode;

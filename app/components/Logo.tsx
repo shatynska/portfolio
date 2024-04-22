@@ -1,21 +1,19 @@
-import { useLocale } from "next-intl";
-import { getTranslator } from "next-intl/server";
-import Image from "next/image";
-import logoImage from "/public/logo.svg";
-import Link from "next/link";
+import { Link } from '@/src/navigation';
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import logoImage from '/public/logo.svg';
 
-export default async function Logo() {
-  const locale = useLocale();
-  const t = await getTranslator(locale, "Index");
+export default function Logo() {
+  const t = useTranslations('Index');
 
   return (
-    <Link href="/" title={t("Home page")}>
+    <Link href="/" title={t('Home page')}>
       <div className="flex gap-2 px-10">
-        <Image src={logoImage} alt={t("Logo")} height={40} width={40} />
+        <Image src={logoImage} alt={t('Logo')} height={40} width={40} />
         <div>
-          {t("Web")}
+          {t('Web')}
           <br />
-          {t("Developer")}
+          {t('Developer')}
         </div>
       </div>
     </Link>

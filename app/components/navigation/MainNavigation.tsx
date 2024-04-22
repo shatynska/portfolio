@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import Cell from "../Cell";
-import I18nLinks from "./I18nLinks";
-import MainLinks from "./MainLinks";
-import ContactLinks from "./ContactLinks";
+import Image from 'next/image';
+import Link from 'next/link';
+import Cell from '../Cell';
+import ContactLinks from './ContactLinks';
+import I18nLinks from './I18nLinks';
+import MainLinks from './MainLinks';
 
 export default function MainNavigation({ className }: { className?: string }) {
   return (

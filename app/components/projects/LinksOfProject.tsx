@@ -1,8 +1,8 @@
-import Link from "next/link";
-import MoreIcon from "../icons/MoreIcon";
-import GithubIcon from "../icons/GithubIcon";
-import WwwIcon from "../icons/WwwIcon";
-import { PartOfProject } from "@/types";
+import { Link } from '@/src/navigation';
+import { PartOfProject } from '@/types';
+import GithubIcon from '../icons/GithubIcon';
+import MoreIcon from '../icons/MoreIcon';
+import WwwIcon from '../icons/WwwIcon';
 
 export default function LinksOfProject({
   moreInfo,
@@ -27,7 +27,7 @@ export default function LinksOfProject({
 
       {gitHubUrl && (
         <Link
-          href={gitHubUrl || ""}
+          href={gitHubUrl || ''}
           target="_blank"
           className="[&>*]:fill-inherit"
           title="GitHub repository"

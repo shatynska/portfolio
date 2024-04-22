@@ -1,12 +1,15 @@
-import PrimaryHeading from "@/app/components/PrimaryHeading";
-import SecondaryHeading from "@/app/components/SecondaryHeading";
-import Project from "@/app/components/projects/Project";
+import PrimaryHeading from '@/app/components/PrimaryHeading';
+import SecondaryHeading from '@/app/components/SecondaryHeading';
+import Project from '@/app/components/projects/Project';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 export default function Page({
-  params: { slug, id = 1},
+  params: { slug, id = 1, locale },
 }: {
-  params: { slug: string; id?: number};
+  params: { slug: string; id?: number; locale: string };
 }) {
+  unstable_setRequestLocale(locale);
+
   const secondaryHeading = slug[0].toUpperCase() + slug.slice(1);
   return (
     <main>

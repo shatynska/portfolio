@@ -1,14 +1,13 @@
-import { db } from "@/drizzle/";
-import { projects } from "@/drizzle/schema";
-import { eq } from "drizzle-orm";
-import { useLocale } from "next-intl";
-import { getTranslator } from "next-intl/server";
-import Image from "next/image";
-import Cell from "../Cell";
-import RolesOfProject from "./RolesOfProject";
-import LinksOfProject from "./LinksOfProject";
-import { localeForSchema } from "@/constants";
-import { Role, PartOfProject } from "@/types";
+import { localeForSchema } from '@/constants';
+import { db } from '@/drizzle/';
+import { projects } from '@/drizzle/schema';
+import { PartOfProject, Role } from '@/types';
+import { eq } from 'drizzle-orm';
+import { useLocale } from 'next-intl';
+import Image from 'next/image';
+import Cell from '../Cell';
+import LinksOfProject from './LinksOfProject';
+import RolesOfProject from './RolesOfProject';
 
 type TitleForSchema = {
   titleEn: string;
@@ -28,7 +27,6 @@ export default async function Project({
   className?: string;
 }) {
   const locale = useLocale();
-  const t = await getTranslator(locale, "Index");
 
   const project = await db.query.projects.findFirst({
     where: eq(projects.id, projectId),
@@ -76,7 +74,7 @@ export default async function Project({
         {project?.image && (
           <Image
             src={project.image}
-            alt={title + "picture"}
+            alt={title + 'picture'}
             width="384"
             height="192"
             className="object-contain"
@@ -88,9 +86,8 @@ export default async function Project({
         <div className="h-8">{type}</div>
         <h3 className="flex h-16 items-center overflow-hidden">{title}</h3>
         <RolesOfProject roles={roles} />
-        <div className="h-16 overflow-hidden">
-          {t("Stack")}: {project?.stack}
-        </div>
+        {/* TODO Use useTranslations fro "stack" in separate component */}
+        <div className="h-16 overflow-hidden">Stack: {project?.stack}</div>
       </section>
 
       <LinksOfProject

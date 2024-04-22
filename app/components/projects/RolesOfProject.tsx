@@ -1,14 +1,12 @@
-import { useLocale } from "next-intl";
-import { getTranslator } from "next-intl/server";
-import { Role } from "@/types";
+import { Role } from '@/types';
+import { useTranslations } from 'next-intl';
 
-export default async function RolesOfProject({
+export default function RolesOfProject({
   roles = [],
 }: {
   roles: Role[] | undefined;
 }) {
-  const locale = useLocale();
-  const t = await getTranslator(locale, "Index");
+  const t = useTranslations('Index');
 
   const rolesIds = roles?.map((role) => role.id);
   const isFullstack = [2, 3].every((roleId) => rolesIds?.includes(roleId));
@@ -28,9 +26,9 @@ export default async function RolesOfProject({
 
   return (
     <div className="h-8 truncate [&>span:not(:last-child)]:after:content-[',\a0']">
-      {t("Roles")}:&nbsp;
+      {t('Roles')}:&nbsp;
       {rolesArray.map((role) => (
-        <span>{role}</span>
+        <span key={role}>{role}</span>
       ))}
     </div>
   );

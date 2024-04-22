@@ -1,32 +1,33 @@
-"use client"
+'use client';
 
-import { useLocale, useTranslations } from "next-intl";
-import NavLinks from "./NavLinks";
+import { locales } from '@/src/navigation';
+import { useLocale, useTranslations } from 'next-intl';
+import NavLinks from './NavLinks';
 
 export default function PartsLinks() {
   const locale = useLocale();
-  const t = useTranslations("Index");
+  const t = useTranslations('Index');
 
   const navLinks = [
     {
-      name: t("Home"),
-      href: "/",
-      title: t("Home page"),
+      name: t('Home'),
+      href: '/',
+      title: t('Home page'),
     },
     {
-      name: t("Design"),
-      href: "/design",
-      title: t("UI/UX design parts of projects"),
+      name: t('Design'),
+      href: '/design',
+      title: t('UI/UX design parts of projects'),
     },
     {
-      name: t("Backend"),
-      href: "/backend",
-      title: t("Backend parts of projects"),
+      name: t('Backend'),
+      href: '/backend',
+      title: t('Backend parts of projects'),
     },
     {
-      name: t("Frontend"),
-      href: "/frontend",
-      title: t("Frontend parts of projects"),
+      name: t('Frontend'),
+      href: '/frontend',
+      title: t('Frontend parts of projects'),
     },
   ];
 

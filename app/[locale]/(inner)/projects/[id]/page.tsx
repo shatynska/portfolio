@@ -1,7 +1,13 @@
-import PrimaryHeading from "@/app/components/PrimaryHeading";
-import Project from "@/app/components/projects/Project";
+import PrimaryHeading from '@/app/components/PrimaryHeading';
+import Project from '@/app/components/projects/Project';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
-export default function Page() {
+export default function Page({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  unstable_setRequestLocale(locale);
 
   return (
     <main>

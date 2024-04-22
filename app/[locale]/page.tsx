@@ -1,15 +1,22 @@
-import Header from "../components/Header";
-import AboutSection from "../components/AboutSection";
-import Projects from "../components/projects/Projects";
-import HamburgerMenu from "../components/navigation/HamburgerMenu";
+import { unstable_setRequestLocale } from 'next-intl/server';
+import AboutSection from '../components/AboutSection';
+import Header from '../components/Header';
+import HamburgerMenu from '../components/navigation/HamburgerMenu';
+import Projects from '../components/projects/Projects';
 
-export default function Home() {
+export default function Home({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
+  unstable_setRequestLocale(locale);
+
   return (
     <main>
       <Header />
       <AboutSection />
       <Projects />
-      <HamburgerMenu className={"lg:hidden"} />
+      <HamburgerMenu className={'lg:hidden'} />
     </main>
   );
 }

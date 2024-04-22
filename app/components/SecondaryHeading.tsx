@@ -1,14 +1,8 @@
-import { useLocale } from "next-intl";
-import { getTranslator } from "next-intl/server";
-import Cell from "./Cell";
+import { useTranslations } from 'next-intl';
+import Cell from './Cell';
 
-export default async function SecondaryHeading({
-  heading,
-}: {
-  heading: string;
-}) {
-  const locale = useLocale();
-  const t = await getTranslator(locale, "Index");
+export default function SecondaryHeading({ heading }: { heading: string }) {
+  const t = useTranslations('Index');
 
   return (
     <section className="flex flex-col md:h-24 md:flex-row">

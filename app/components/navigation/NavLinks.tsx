@@ -1,13 +1,12 @@
-"use client";
+'use client';
 
-import { usePathname } from "next-intl/client";
-import Link from "next-intl/link";
+import { Link, locales, usePathname } from '@/src/navigation';
 
-type NavLink = {
+export type NavLink = {
   name: string;
   href: string;
   title?: string;
-  locale?: string;
+  locale?: (typeof locales)[number];
 };
 
 export default function NavLinks({
@@ -32,12 +31,21 @@ export default function NavLinks({
 
         if (!isActive) {
           return (
-            <Link href={link.href} title={link.title} locale={link.locale}>
+            <Link
+              href={link.href}
+              title={link.title}
+              locale={link.locale}
+              key={link.title}
+            >
               {link.name}
             </Link>
           );
-        } else if (link.href !== "/" || link.locale) {
-          return <span className="opacity-70">{link.name}</span>;
+        } else if (link.href !== '/' || link.locale) {
+          return (
+            <span className="opacity-70" key={link.title}>
+              {link.name}
+            </span>
+          );
         }
       })}
     </nav>
