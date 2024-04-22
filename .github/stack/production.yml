@@ -1,19 +1,18 @@
-version: "3.8"
+version: '3.8'
 
 services:
-  app4:
+  shatynska-com:
     image: shatynska/shatynskacom:latest
-    volumes:
-      - /var/www/shatynska.com/green/current/_docker/nginx/conf.d:/etc/nginx/conf.ds
     labels:
-      - "traefik.enable=true"
-      - "traefik.docker.network=traefik-public"
-      - "traefik.http.routers.green_shatynska_com.entrypoints=https"
-      - "traefik.http.routers.green_shatynska_com.rule=Host(`shatynska.com`)"
-      - "traefik.http.routers.green_shatynska_com.tls=true"
-      - "traefik.http.services.green_shatynska_com.loadbalancer.server.port=3000"
+      - 'traefik.enable=true'
+      - 'traefik.docker.network=traefik-public'
+      - 'traefik.http.routers.shatynska_com.entrypoints=https'
+      - 'traefik.http.routers.shatynska_com.rule=Host(`shatynska.com`)'
+      - 'traefik.http.routers.shatynska_com.tls=true'
+      - 'traefik.http.routers.shatynska_com.tls.certresolver=letsEncrypt'
+      - 'traefik.http.services.shatynska_com.loadbalancer.server.port=3000'
     ports:
-      - 3000:3000
+      - 2990:3000
     networks:
       - traefik-public
       - default
