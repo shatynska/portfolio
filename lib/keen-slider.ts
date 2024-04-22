@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import { useProjectsCarouselContext } from "@/hooks/useProjectsCarouselContext";
