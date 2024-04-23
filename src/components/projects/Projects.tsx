@@ -6,7 +6,10 @@ import Project from './Project';
 
 export default async function Projects() {
   try {
-    const allProjects = await db.select().from(projects);
+    const allProjects = await db
+      .select()
+      .from(projects)
+      .orderBy(projects.order);
 
     if (allProjects.length != 0) {
       return (
