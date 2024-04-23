@@ -12,6 +12,7 @@
     "migrate": "drizzle-kit generate:pg --schema=./drizzle/schema.ts && node -r esbuild-register drizzle/migrate.ts"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.0.7",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
