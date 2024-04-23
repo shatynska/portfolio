@@ -32,7 +32,7 @@ export default function Carousel({
         <div className="navigation-wrapper">
           <div
             ref={sliderRef}
-            className="keen-slider fill-background-800 [&>*:nth-child(3n)]:divide-background-700  [&>*:nth-child(3n)]:bg-background-800 [&>*:nth-child(3n)]:text-background-50 [&>*:nth-child(3n+1)]:bg-background-200 [&>*:nth-child(3n+2)]:divide-background-200 [&>*:nth-child(3n+2)]:border-background-100 [&>*:nth-child(3n)]:fill-background [&>*:nth-child(3n+1)]:divide-background [&>*:nth-child(3n+2)]:border [&>*:nth-child(3n+2)]:bg-background"
+            className="keen-slider fill-background-800 [&>*:nth-child(3n)]:divide-background-700  [&>*:nth-child(3n)]:bg-background-800 [&>*:nth-child(3n+1)]:bg-background-200 [&>*:nth-child(3n+2)]:divide-background-100 [&>*:nth-child(3n+2)]:border-background-100 [&>*:nth-child(3n+1)]:divide-background-50 [&>*:nth-child(3n)]:fill-background [&>*:nth-child(3n)]:text-background [&>*:nth-child(3n+2)]:border [&>*:nth-child(3n+2)]:bg-background"
           >
             {children}
           </div>
