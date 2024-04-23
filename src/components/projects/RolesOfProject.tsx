@@ -18,7 +18,7 @@ export default function RolesOfProject({
       if (role.id === 1 || !isFullstack) {
         rolesArray.push(role.title);
       } else {
-        rolesArray.push(t(`Fullstack developer`));
+        rolesArray.push(t(`Fullstack developer`).toLocaleLowerCase());
         break;
       }
     }
