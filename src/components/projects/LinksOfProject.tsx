@@ -1,7 +1,6 @@
 import { Link } from '@/navigation';
 import { PartOfProject } from '@/types';
 import GithubIcon from '../icons/GithubIcon';
-import MoreIcon from '../icons/MoreIcon';
 import WwwIcon from '../icons/WwwIcon';
 
 export default function LinksOfProject({
@@ -15,7 +14,8 @@ export default function LinksOfProject({
 }) {
   return (
     <section className="flex h-24 items-center  justify-center gap-8 overflow-hidden [&>*]:fill-inherit">
-      {moreInfo.length && (
+      {/* TODO Activate when inner pages will be ready */}
+      {/* {moreInfo.length && (
         <Link
           href={`/projects/${moreInfo[0].id}`}
           className="[&>*]:fill-inherit"
@@ -23,7 +23,7 @@ export default function LinksOfProject({
         >
           <MoreIcon />
         </Link>
-      )}
+      )} */}
 
       {gitHubUrl && (
         <Link

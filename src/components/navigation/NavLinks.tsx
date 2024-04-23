@@ -28,6 +28,11 @@ export default function NavLinks({
         } else {
           isActive = pathname === link.href;
         }
+        // TODO Unfreeze when inner pages will be ready
+        // temporary "freeze" these links
+        if (['/design', '/backend', '/frontend'].includes(link.href)) {
+          isActive = true;
+        }
 
         if (!isActive) {
           return (
