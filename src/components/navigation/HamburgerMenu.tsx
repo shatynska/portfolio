@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState, useRef } from "react";
-import MainNavigation from "./MainNavigation";
-import HamburgerIcon from "../icons/HamburgerIcon";
+import { useRef, useState } from 'react';
+import HamburgerIcon from '../icons/HamburgerIcon';
+import MainNavigation from './MainNavigation';
 
 export default function HamburgerMenu({ className }: { className?: string }) {
   const [HamburgerChecked, setHamburgerChecked] = useState(false);
@@ -39,13 +39,13 @@ export default function HamburgerMenu({ className }: { className?: string }) {
 
       <div
         className={`absolute -z-10 flex flex-col items-end transition-all duration-300 ${
-          HamburgerChecked ? "mr-0 w-full" : "-mr-[100%] w-0"
+          HamburgerChecked ? 'mr-0 w-full' : '-mr-[100%] w-0'
         }`}
       >
         <MainNavigation />
 
         <div
-          className="absolute left-0 top-0 -z-50 m-0 h-screen w-full bg-primary-900 opacity-90"
+          className="bg-background-900 absolute left-0 top-0 -z-50 m-0 h-screen w-full opacity-90"
           onClick={handleOutsideClick}
         ></div>
       </div>

@@ -14,7 +14,7 @@ export default function Page({
       <PrimaryHeading />
       <Project
         projectId={1}
-        className=" divide-primary-700  bg-primary-800 fill-primary-50 text-primary-100"
+        className=" divide-background-700  bg-background-800 text-background-50 fill-background"
       />
     </main>
   );

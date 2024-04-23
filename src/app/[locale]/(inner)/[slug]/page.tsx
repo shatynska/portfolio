@@ -17,7 +17,7 @@ export default function Page({
       <SecondaryHeading heading={secondaryHeading} />
       <Project
         projectId={id}
-        className=" divide-primary-700  bg-primary-800 fill-primary-50 text-primary-100"
+        className="divide-background-700 bg-background-800 fill-background text-background"
       />
     </main>
   );
