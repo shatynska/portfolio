@@ -7,9 +7,7 @@ import MainLinks from './MainLinks';
 
 export default function MainNavigation({ className }: { className?: string }) {
   return (
-    <Cell
-      className={`h-144 divide-y-2 divide-primary-300 border border-primary-200 bg-primary-50 ${className}`}
-    >
+    <Cell height="large" className={`divide-y-2 border ${className}`}>
       <I18nLinks />
       <ContactLinks />
       <MainLinks />

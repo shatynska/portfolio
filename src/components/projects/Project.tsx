@@ -1,7 +1,7 @@
 import { localeForSchema } from '@/constants';
-import { PartOfProject, Role } from '@/types';
 import { db } from '@/drizzle/index';
 import { projects } from '@/drizzle/schema';
+import { PartOfProject, Role } from '@/types';
 import { eq } from 'drizzle-orm';
 import { useLocale } from 'next-intl';
 import Image from 'next/image';
@@ -67,8 +67,9 @@ export default async function Project({
 
   return (
     <Cell
+      height="large"
       key={project?.id}
-      className={`keen-slider__slide flex h-144 divide-y-2 px-0 text-sm ${className}`}
+      className={`keen-slider__slide flex divide-y-2 px-0 text-sm ${className}`}
     >
       <section className="flex h-48 w-full justify-center overflow-hidden pb-8 pt-16">
         {project?.image && (

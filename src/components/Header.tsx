@@ -9,7 +9,11 @@ export default function Header() {
 
   return (
     <header className="flex flex-col md:flex-row">
-      <Cell className="h-screen max-h-192 min-h-128 gap-44 bg-primary-950 bg-[url('/backgrounds/line-dark.svg')] bg-contain bg-center bg-no-repeat px-14 pb-24 font-semibold text-primary-50 md:h-144 md:bg-primary-300 md:bg-[url('/backgrounds/line.svg')] md:pb-0 md:text-primary-900">
+      <Cell
+        height="large"
+        background="darkest"
+        className="md:bg-background-200 md:text-background-900 h-screen max-h-192 min-h-128 gap-44 bg-[url('/backgrounds/line-dark.svg')] bg-contain bg-center bg-no-repeat px-14  pb-24 font-semibold md:bg-[url('/backgrounds/line.svg')] md:pb-0"
+      >
         <h1 className="text-[2.5rem] leading-[3.25rem]">
           {t('Web')}
           <br />
@@ -21,7 +25,7 @@ export default function Header() {
           {t('Shatynska')}
         </div>
       </Cell>
-      <Cell className="h-144 md:order-first">
+      <Cell height="large" className="md:order-first">
         <Image
           src={developerImage}
           alt={t('Web developer picture')}

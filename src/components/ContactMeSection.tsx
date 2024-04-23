@@ -6,14 +6,14 @@ export default function ContactMeSection() {
   const t = useTranslations('Index');
 
   return (
-    <section className="flex flex-col md:h-24 md:flex-row">
-      <Cell className="h-24 items-center bg-primary-900 text-base text-primary-100">
+    <section className="flex flex-col md:flex-row">
+      <Cell background="darker" className="items-center text-base">
         <Link href="/contact" className="text-lg font-semibold">
           {t('Contact me')}
         </Link>
       </Cell>
-      <Cell className="bg-primary-300" />
-      <Cell className="order-first border border-primary-200 bg-primary-50 md:hidden lg:order-none lg:block" />
+      <Cell background="light" />
+      <Cell className="order-first border md:hidden lg:order-none lg:block" />
     </section>
   );
 }

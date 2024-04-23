@@ -7,12 +7,19 @@ export default function AboutSection() {
 
   return (
     <section className="flex flex-col md:flex-row [&_p:not(:first-child)]:mt-4">
-      <Cell className="border border-primary-200 bg-primary-50 px-10 py-16 md:h-144 [&>p:not(:first-child)]:mt-4">
+      <Cell
+        height="large"
+        className="h-auto border px-10 py-16 [&>p:not(:first-child)]:mt-4"
+      >
         <p>{t('About_paragraph_1')}</p>
         <p>{t('About_paragraph_2')}</p>
         <p>{t('About_paragraph_3')}</p>
       </Cell>
-      <Cell className="justify-start bg-primary-900 px-10 py-16 text-primary-100 md:h-144 [&_div]:mt-8">
+      <Cell
+        height="large"
+        background="darker"
+        className="h-auto justify-start px-10 py-16 [&_div]:mt-8"
+      >
         <h2 className="text-2xl font-semibold">{t('Skills')}</h2>
         <ul>
           <li>JavaScript, TypeScript</li>
@@ -26,7 +33,7 @@ export default function AboutSection() {
           <li>UI/UX Design, Figma</li>
         </ul>
       </Cell>
-      <Cell className="hidden h-144 lg:flex">
+      <Cell height="large" background="light" className="hidden lg:flex">
         <Image src="/decoration.jpg" alt="decoration element" fill={true} />
       </Cell>
     </section>

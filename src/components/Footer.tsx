@@ -14,10 +14,10 @@ export default function Footer() {
   return (
     <footer>
       {pathname !== '/contact' && <ContactMeSection />}
-      <section className="flex flex-col md:h-24 md:flex-row">
-        <Cell className="hidden bg-primary-300 md:block " />
-        <Cell className="hidden border border-primary-200 bg-primary-50 lg:block" />
-        <Cell className="items-center bg-primary-600 text-sm text-primary-100">
+      <section className="flex flex-col md:flex-row">
+        <Cell background="light" className="hidden md:block " />
+        <Cell className="hidden border lg:block" />
+        <Cell background="medium" className="items-center text-sm">
           © {currentYear} {t('Helen') + '\u00A0' + t('Shatynska')}
         </Cell>
       </section>
