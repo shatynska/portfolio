@@ -3,12 +3,12 @@ import { VariantProps, cva } from 'class-variance-authority';
 import { HTMLAttributes } from 'react';
 
 const cellVariants = cva(
-  'relative flex min-h-16 w-screen min-w-full max-w-112 flex-col justify-center md:w-96 md:min-w-96 md:max-w-96',
+  'relative flex min-h-16 px-10 w-screen min-w-full max-w-112 flex-col justify-center md:w-96 md:min-w-96 md:max-w-96',
   {
     variants: {
       height: {
-        small: 'h-24',
-        large: 'h-144 md:h-144',
+        small: 'h-20',
+        large: 'h-128 md:h-128',
       },
       background: {
         lightest: 'bg-background border-background-100 divide-background-100',

@@ -22,14 +22,14 @@ export default function CarouselNavigation() {
     <section className="flex flex-col md:flex-row">
       <Cell className="hidden border md:block" />
       <Cell background="mediumDark" className="p-10">
-        <div className="flex items-center justify-between">
-          <div className=" flex w-28 items-center justify-between">
+        <div className="flex items-center justify-around">
+          <div className=" flex w-24 items-center justify-between">
             <span>{t('Project')}</span>
             <span>
               {currentSlideNumber} / {totalNumberOfSlides}
             </span>
           </div>
-          <div className="flex w-36 items-center justify-between">
+          <div className="flex w-32 items-center justify-between">
             <Image
               src="icons/previous.svg"
               width={32}

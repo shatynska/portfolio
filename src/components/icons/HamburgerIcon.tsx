@@ -1,6 +1,6 @@
 export default function HamburgerIcon() {
   return (
-    <div className="relative flex h-24 w-24 transform items-center justify-center overflow-hidden transition-all duration-200">
+    <div className="relative flex h-20 w-20 transform items-center justify-center overflow-hidden transition-all duration-200">
       <div className="flex h-6 w-7 origin-center transform flex-col justify-around overflow-hidden transition-all duration-300">
         <div className="burger bg-background-500 h-[3px] w-7 origin-left transform transition-all duration-300"></div>
         <div className="burger bg-background-500 h-[3px] w-7 origin-left transform transition-all duration-300"></div>

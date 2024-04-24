@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function ContactLinks() {
   return (
-    <div className="flex h-24 items-center justify-center gap-8  ">
+    <div className="flex h-20 items-center justify-center gap-8  ">
       <Link href="tel:+380978976847" target="_blank" title="Phone number">
         <Image src="/icons/phone.svg" height="32" width="32" alt="Phone icon" />
       </Link>

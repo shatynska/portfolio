@@ -8,10 +8,7 @@ export default function ContactMeSection() {
 
   return (
     <section className="flex flex-col md:flex-row">
-      <Cell
-        background="darker"
-        className="items-center text-base font-semibold"
-      >
+      <Cell background="darker" className="items-center font-semibold">
         <Popover>
           <PopoverTrigger>{t('Contact me')}</PopoverTrigger>
           <PopoverContent>

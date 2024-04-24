@@ -21,7 +21,7 @@ export default function I18nLinks() {
 
   return (
     <NavLinks
-      className="flex h-24 items-center justify-center gap-8 font-semibold"
+      className="flex h-20 items-center justify-center gap-8 font-semibold"
       params={{ locale: locale, navLinks: navLinks }}
     />
   );

@@ -1,9 +1,9 @@
-<svg height="576px" width="384" xmlns="http://www.w3.org/2000/svg">
+<svg height="512px" width="384" xmlns="http://www.w3.org/2000/svg">
     <line
     x1="0"
-    y1="384"
+    y1="360"
     x2="384"
-    y2="193"
+    y2="156"
     stroke-width="2"
     stroke="#f7f7f7"
     />

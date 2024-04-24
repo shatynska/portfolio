@@ -71,7 +71,7 @@ export default async function Project({
       key={project?.id}
       className={`keen-slider__slide flex divide-y-2 px-0 text-sm ${className}`}
     >
-      <section className="flex h-48 w-full justify-center overflow-hidden pb-8 pt-16">
+      <section className="flex h-44 w-full justify-center overflow-hidden pb-8 pt-12">
         {project?.image && (
           <Image
             src={project.image}
@@ -83,12 +83,12 @@ export default async function Project({
         )}
       </section>
 
-      <section className="flex h-72 w-full flex-col gap-4 p-10 leading-6 ">
-        <div className="h-8">{type}</div>
-        <h3 className="flex h-16 items-center overflow-hidden">{title}</h3>
+      <section className="flex h-64 w-full flex-col gap-4 px-10 py-8 ">
+        <div>{type}</div>
+        <h3 className="line-clamp-2 flex h-16 items-center">{title}</h3>
         <RolesOfProject roles={roles} />
         {/* TODO Use useTranslations fro "stack" in separate component */}
-        <div className="h-16 overflow-hidden">Stack: {project?.stack}</div>
+        <div className=" line-clamp-2">Stack: {project?.stack}</div>
       </section>
 
       <LinksOfProject

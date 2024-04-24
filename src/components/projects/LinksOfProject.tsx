@@ -13,7 +13,7 @@ export default function LinksOfProject({
   url: string | null | undefined;
 }) {
   return (
-    <section className="flex h-24 items-center  justify-center gap-8 overflow-hidden [&>*]:fill-inherit">
+    <section className="flex h-20 items-center  justify-center gap-8 overflow-hidden [&>*]:fill-inherit">
       {/* TODO Activate when inner pages will be ready */}
       {/* {moreInfo.length && (
         <Link

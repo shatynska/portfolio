@@ -25,7 +25,7 @@ export default function RolesOfProject({
   }
 
   return (
-    <div className="h-8 truncate [&>span:not(:last-child)]:after:content-[',\a0']">
+    <div className="line-clamp-1 [&>span:not(:last-child)]:after:content-[',\a0']">
       {t('Roles')}:&nbsp;
       {rolesArray.map((role) => (
         <span key={role}>{role}</span>

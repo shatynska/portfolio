@@ -12,20 +12,23 @@ export default function Header() {
       <Cell
         height="large"
         background="darkest"
-        className="md:bg-background-200 md:text-background-900 h-screen max-h-192 min-h-128 gap-44 bg-[url('/backgrounds/line-dark.svg')] bg-contain bg-center bg-no-repeat px-14  pb-24 font-semibold md:bg-[url('/backgrounds/line.svg')] md:pb-0"
+        className="md:bg-background-200 md:text-background-900 h-screen max-h-192 min-h-128 gap-36 px-16 pb-24 text-4xl font-semibold leading-[3rem] md:bg-[url('/backgrounds/line.svg')] md:bg-auto md:bg-center md:bg-no-repeat"
       >
-        <h1 className="text-[2.5rem] leading-[3.25rem]">
+        <h1>
           {t('Web')}
           <br />
           {t('Developer')}
         </h1>
-        <div className="text-right text-[2.5rem] leading-[3.25rem]">
+        <div className="text-right">
           {t('Helen')}
           <br />
           {t('Shatynska')}
         </div>
       </Cell>
-      <Cell height="large" className="md:order-first">
+      <Cell
+        height="large"
+        className="h-screen max-h-160 min-h-128 md:order-first"
+      >
         <Image
           src={developerImage}
           alt={t('Web developer picture')}

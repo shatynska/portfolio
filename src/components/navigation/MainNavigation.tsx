@@ -6,7 +6,7 @@ import SocialMediaLinks from './SocialMediaLinks';
 
 export default function MainNavigation({ className }: { className?: string }) {
   return (
-    <Cell height="large" className={`divide-y-2 border ${className}`}>
+    <Cell height="large" className={`divide-y-2 border px-0 ${className}`}>
       <I18nLinks />
       <ContactLinks />
       <MainLinks />

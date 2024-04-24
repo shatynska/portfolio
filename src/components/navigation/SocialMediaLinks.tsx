@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function SocialMediaLinks() {
   return (
-    <div className="flex h-24 items-center justify-center gap-8  ">
+    <div className="flex h-20 items-center justify-center gap-8  ">
       <Link
         href="https://www.linkedin.com/in/shatynska/"
         target="_blank"
