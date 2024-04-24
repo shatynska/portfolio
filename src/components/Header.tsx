@@ -12,7 +12,7 @@ export default function Header() {
       <Cell
         height="large"
         background="darkest"
-        className="md:bg-background-200 md:text-background-900 h-screen max-h-192 min-h-128 gap-36 px-16 pb-24 text-4xl font-semibold leading-[3rem] md:bg-[url('/backgrounds/line.svg')] md:bg-auto md:bg-center md:bg-no-repeat"
+        className="md:bg-background-200 md:text-background-900 h-screen max-h-192 min-h-128 gap-36 px-16 pb-24 text-4xl font-semibold leading-[3rem] md:bg-[url('/backgrounds/line.svg')] md:bg-auto md:bg-center md:bg-no-repeat md:pb-0"
       >
         <h1>
           {t('Web')}
