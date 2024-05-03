@@ -23,10 +23,10 @@ export default function AboutSection() {
         <h2 className="text-2xl font-semibold">{t('Skills')}</h2>
         <ul>
           <li>JavaScript, TypeScript</li>
-          <li>Node.js, NestJS</li>
+          <li>Node.js, NestJS, Express.js</li>
           <li>React, Next.js</li>
           <li>PostgreSQL, Prisma, Drizzle</li>
-          <li>REST API, Unit tests</li>
+          <li>REST API, OpenAPI, Unit tests</li>
           <li>HTML, CSS, Tailwind</li>
           <li>Git, GitHub Actions, CI/CD</li>
           <li>Docker, Linux, VPS</li>
