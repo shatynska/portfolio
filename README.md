@@ -20,6 +20,15 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Commit conventions
+
+Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/) (`type(scope): subject`, e.g. `fix(header): correct mobile nav overflow`), with `type` one of `feat`, `fix`, `chore`, `docs`, `refactor`, `style`, `test`, `perf`, `build`, `ci`.
+
+This is enforced locally via [Husky](https://typicode.github.io/husky/) git hooks, set up automatically the first time you run `npm install`:
+
+- **pre-commit**: runs `lint-staged` (ESLint + Prettier) on staged files
+- **commit-msg**: runs `commitlint` against the message
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
