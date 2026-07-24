@@ -5,11 +5,13 @@ The repo is a solo-maintained Next.js portfolio (npm, single `main` branch, no P
 ## Goals / Non-Goals
 
 **Goals:**
+
 - Every new commit message follows Conventional Commits (`type(scope?): subject`).
 - Staged files are auto-linted/formatted (ESLint + Prettier) before a commit is created.
 - Hook installation is automatic on `npm install` (no manual setup step to forget).
 
 **Non-Goals:**
+
 - No CI-side commit message enforcement.
 - No changelog generation or automated version bumping (`semantic-release`, `standard-version`).
 - No rewriting or validating existing (pre-change) commit history.
@@ -24,10 +26,11 @@ The repo is a solo-maintained Next.js portfolio (npm, single `main` branch, no P
 No custom scopes or rule overrides. Alternatives considered: a relaxed custom ruleset (rejected — adds bikeshedding for a solo repo with no immediate need) and a minimal "type-prefix-only" check (rejected — the full ruleset is a well-known standard, negligible extra friction, and cheap to install as-is via `commitlint --extends @commitlint/config-conventional`).
 
 **3. `lint-staged` for pre-commit, wired to existing `eslint` and `prettier` configs.**
-Runs `eslint --fix` on `*.{js,jsx,ts,tsx}` and `prettier --write` on staged files matching the project's existing Prettier scope. No new lint rules are introduced — this only changes *when* linting/formatting happens (automatically, at commit time, on the diff) rather than requiring a manual `npm run lint`.
+Runs `eslint --fix` on `*.{js,jsx,ts,tsx}` and `prettier --write` on staged files matching the project's existing Prettier scope. No new lint rules are introduced — this only changes _when_ linting/formatting happens (automatically, at commit time, on the diff) rather than requiring a manual `npm run lint`.
 
 **4. No CI enforcement — decided and rejected explicitly.**
 Considered adding a commitlint step to `deploy.yml` as a bypass safety net (catches `--no-verify` or a forgotten `npm install`). Rejected because:
+
 - This is a solo repo — the only committer is the repo owner, who runs the local hook on every normal commit.
 - There is no PR flow to hang a standard `commitlint` GitHub Action on; `deploy.yml` only triggers on direct pushes to `main`. Validating a push's commit range without a PR means diffing `github.event.before`/`github.event.after` SHAs, which breaks down on force-pushes, squashed history, and the initial push — meaningful added complexity for an edge case that mainly protects against the owner bypassing their own hook.
 - If the repo ever becomes multi-contributor, this decision should be revisited.

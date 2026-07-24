@@ -14,9 +14,11 @@ The repo has no git hook tooling and no commit message convention — history is
 ## Capabilities
 
 ### New Capabilities
+
 - `commit-hygiene`: local git-hook-enforced commit message format (Conventional Commits) and pre-commit lint/format of staged files.
 
 ### Modified Capabilities
+
 (none)
 
 ## Impact
